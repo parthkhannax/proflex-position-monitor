@@ -55,7 +55,7 @@ Live breakeven monitoring dashboard for Proflex Growth Gazette & Income Insider 
 
 ```
 proflex-position-monitor/
-├── index.html          # GitHub Pages dashboard (auto-refreshes every 60s)
+├── index.html          # GitHub Pages dashboard (auto-refreshes every 60s, white quant theme)
 ├── monitor.py          # Main monitoring script — run this locally or via cron
 ├── positions.json      # Your open positions (edit this to add/remove trades)
 ├── requirements.txt    # Python dependencies
@@ -215,10 +215,11 @@ git push
 The GitHub Pages dashboard at `https://parthkhannax.github.io/proflex-position-monitor/` shows:
 
 - Summary bar: total positions, safe count, warning count, critical/breached count
-- Full positions table: ticker, strategy, strike, expiry, premium collected, breakeven, live price, distance %, status badge
-- Option chain data inline: last price, bid/ask, implied volatility
-- Auto-refreshes every 60 seconds
+- Full positions table: Ticker · Strategy · Strike · Expiry · Premium · Breakeven · Stock Price · Opt Last · IV · Distance · Status
+- White background, JetBrains Mono font, quant terminal aesthetic
+- Auto-refreshes every 60 seconds (reads latest status.json from GitHub)
 - Hover any row to see the full alert message
+- Row highlights: yellow (Warning), red tint (Critical), deep red (Breached)
 
 The dashboard reads `data/status.json` which `monitor.py` pushes to GitHub on every run.
 

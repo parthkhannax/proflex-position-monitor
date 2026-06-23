@@ -1,0 +1,90 @@
+{
+  "updated_at": "2026-06-23T15:36:27.711365Z",
+  "positions": [
+    {
+      "id": "nvda-short-put-aug21",
+      "ticker": "NVDA",
+      "strategy": "Short Put",
+      "strike": 210,
+      "expiry": "2025-08-21",
+      "premium_collected": 6.3,
+      "contracts": 1,
+      "open_date": "2025-06-01",
+      "newsletter": "Growth Gazette",
+      "rating": "B",
+      "notes": "Sample position \u2014 replace with real trades",
+      "current_price": 201.48,
+      "option_data": {
+        "bid": 8.55,
+        "ask": 8.75,
+        "last": 8.63,
+        "iv": 40.2,
+        "volume": 1133,
+        "expiry_used": "2026-06-24"
+      },
+      "status": {
+        "breakeven": 203.7,
+        "breakeven_label": "$203.70",
+        "distance_pct": -1.0898379970544914,
+        "alert_level": "CRITICAL",
+        "message": "\ud83d\udd34 CRITICAL: Stock $201.48 has breached breakeven $203.70 by 1.1%. Consider rolling or closing.",
+        "risk_direction": "downside"
+      }
+    },
+    {
+      "id": "aapl-covered-call-aug21",
+      "ticker": "AAPL",
+      "strategy": "Covered Call",
+      "strike": 230,
+      "expiry": "2025-08-21",
+      "premium_collected": 3.5,
+      "contracts": 1,
+      "open_date": "2025-06-10",
+      "newsletter": "Growth Gazette",
+      "rating": "A",
+      "notes": "Sample position \u2014 replace with real trades",
+      "current_price": 297.78,
+      "option_data": null,
+      "status": {
+        "breakeven": 230,
+        "breakeven_label": "$230.00 (call strike)",
+        "distance_pct": -29.469565217391292,
+        "alert_level": "BREACHED",
+        "message": "\ud83d\udea8 BREACHED: Stock $297.78 is 29.5% above call strike $230.00. Deep ITM \u2014 shares likely called away at expiry.",
+        "risk_direction": "upside"
+      }
+    },
+    {
+      "id": "tsla-bull-put-spread-aug21",
+      "ticker": "TSLA",
+      "strategy": "Bull Put Spread",
+      "strike_high": 300,
+      "strike_low": 270,
+      "expiry": "2025-08-21",
+      "premium_collected": 4.2,
+      "contracts": 1,
+      "open_date": "2025-06-05",
+      "newsletter": "Growth Gazette",
+      "rating": "B",
+      "notes": "Sample position \u2014 replace with real trades",
+      "current_price": 384.15,
+      "option_data": {
+        "bid": 0.01,
+        "ask": 0.04,
+        "last": 0.02,
+        "iv": 120.3,
+        "volume": 18,
+        "expiry_used": "2026-06-24"
+      },
+      "status": {
+        "breakeven": 295.8,
+        "breakeven_label": "$295.80 (spread breakeven)",
+        "distance_pct": 29.868154158215,
+        "alert_level": "OK",
+        "message": "Stock $384.15 is 29.9% above breakeven $295.80. Spread intact.",
+        "risk_direction": "downside",
+        "max_loss_floor": 270
+      }
+    }
+  ]
+}

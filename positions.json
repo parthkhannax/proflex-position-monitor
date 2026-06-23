@@ -1,0 +1,44 @@
+{
+  "positions": [
+    {
+      "id": "nvda-short-put-aug21",
+      "ticker": "NVDA",
+      "strategy": "Short Put",
+      "strike": 210,
+      "expiry": "2025-08-21",
+      "premium_collected": 6.30,
+      "contracts": 1,
+      "open_date": "2025-06-01",
+      "newsletter": "Growth Gazette",
+      "rating": "B",
+      "notes": "Sample position — replace with real trades"
+    },
+    {
+      "id": "aapl-covered-call-aug21",
+      "ticker": "AAPL",
+      "strategy": "Covered Call",
+      "strike": 230,
+      "expiry": "2025-08-21",
+      "premium_collected": 3.50,
+      "contracts": 1,
+      "open_date": "2025-06-10",
+      "newsletter": "Growth Gazette",
+      "rating": "A",
+      "notes": "Sample position — replace with real trades"
+    },
+    {
+      "id": "tsla-bull-put-spread-aug21",
+      "ticker": "TSLA",
+      "strategy": "Bull Put Spread",
+      "strike_high": 300,
+      "strike_low": 270,
+      "expiry": "2025-08-21",
+      "premium_collected": 4.20,
+      "contracts": 1,
+      "open_date": "2025-06-05",
+      "newsletter": "Growth Gazette",
+      "rating": "B",
+      "notes": "Sample position — replace with real trades"
+    }
+  ]
+}

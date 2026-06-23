@@ -1,0 +1,51 @@
+name: Update Position Prices
+
+on:
+  schedule:
+    # Every 15 min, 13:00–20:59 UTC, Mon–Fri (covers US market hours incl. pre/post)
+    - cron: "*/15 13-20 * * 1-5"
+  workflow_dispatch: {}   # allow manual "Run workflow" button
+
+permissions:
+  contents: write   # needed to commit status.json back to the repo
+
+concurrency:
+  group: price-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch prices and write status.json
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+        run: python monitor.py
+
+      - name: Commit and push status.json
+        run: |
+          git config user.name "proflex-monitor-bot"
+          git config user.email "actions@github.com"
+          git add data/status.json alert_history.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "monitor: auto-update prices $(date -u '+%Y-%m-%d %H:%M UTC')"
+            git push
+          fi

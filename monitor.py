@@ -377,7 +377,12 @@ def main():
     STATUS_FILE.write_text(json.dumps(output, indent=2))
     print(f"\n✓ status.json written")
 
-    # Push to GitHub so Pages dashboard updates
+    # In GitHub Actions, the workflow commits + pushes status.json itself.
+    if os.getenv("GITHUB_ACTIONS") == "true":
+        print("✓ Running in GitHub Actions — workflow will commit status.json")
+        return
+
+    # Push to GitHub so Pages dashboard updates (local runs only)
     try:
         subprocess.run(["git", "add", "data/status.json"], cwd=BASE_DIR, check=True)
         commit_result = subprocess.run(

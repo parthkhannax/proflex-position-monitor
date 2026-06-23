@@ -10,6 +10,7 @@ import json
 import os
 import smtplib
 import subprocess
+import time
 from datetime import datetime, date
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -132,56 +133,64 @@ def compute_status(pos: dict, price: float) -> dict:
 
 # ── Price + Option Chain Fetch ───────────────────────────────────────────────
 
-def fetch_price(ticker: str) -> float | None:
-    try:
-        t = yf.Ticker(ticker)
-        info = t.fast_info
-        return round(float(info.last_price), 2)
-    except Exception as e:
-        print(f"  [price error] {ticker}: {e}")
-        return None
+def fetch_price(ticker: str, retries: int = 3) -> float | None:
+    for attempt in range(1, retries + 1):
+        try:
+            t = yf.Ticker(ticker)
+            info = t.fast_info
+            price = float(info.last_price)
+            if price and price > 0:
+                return round(price, 2)
+            raise ValueError(f"invalid price: {price}")
+        except Exception as e:
+            print(f"  [price attempt {attempt}/{retries}] {ticker}: {e}")
+            if attempt < retries:
+                time.sleep(2 * attempt)
+    return None
 
 
-def fetch_option_data(ticker: str, expiry: str, strike: float, option_type: str) -> dict | None:
+def fetch_option_data(ticker: str, expiry: str, strike: float, option_type: str, retries: int = 3) -> dict | None:
     """
     Fetch live bid/ask/last for a specific option contract from yfinance.
     option_type: 'put' or 'call'
     expiry: 'YYYY-MM-DD'
     Returns dict with bid, ask, last, iv, volume or None on failure.
     """
-    try:
-        t = yf.Ticker(ticker)
-        available = t.options  # list of expiry date strings
+    for attempt in range(1, retries + 1):
+        try:
+            t = yf.Ticker(ticker)
+            available = t.options  # list of expiry date strings
 
-        # Find closest matching expiry
-        target = date.fromisoformat(expiry)
-        closest = min(available, key=lambda d: abs(date.fromisoformat(d) - target)) if available else None
-        if not closest:
-            return None
+            # Find closest matching expiry
+            target = date.fromisoformat(expiry)
+            closest = min(available, key=lambda d: abs(date.fromisoformat(d) - target)) if available else None
+            if not closest:
+                return None
 
-        chain = t.option_chain(closest)
-        df = chain.puts if option_type == "put" else chain.calls
-        row = df[df["strike"] == strike]
-        if row.empty:
-            # Find closest strike
-            df["dist"] = (df["strike"] - strike).abs()
-            row = df.nsmallest(1, "dist")
+            chain = t.option_chain(closest)
+            df = chain.puts if option_type == "put" else chain.calls
+            row = df[df["strike"] == strike]
+            if row.empty:
+                df["dist"] = (df["strike"] - strike).abs()
+                row = df.nsmallest(1, "dist")
 
-        if row.empty:
-            return None
+            if row.empty:
+                return None
 
-        r = row.iloc[0]
-        return {
-            "bid": round(float(r.get("bid", 0)), 2),
-            "ask": round(float(r.get("ask", 0)), 2),
-            "last": round(float(r.get("lastPrice", 0)), 2),
-            "iv": round(float(r.get("impliedVolatility", 0)) * 100, 1),
-            "volume": int(r.get("volume", 0) or 0),
-            "expiry_used": closest,
-        }
-    except Exception as e:
-        print(f"  [option error] {ticker} {expiry} {strike}: {e}")
-        return None
+            r = row.iloc[0]
+            return {
+                "bid": round(float(r.get("bid", 0)), 2),
+                "ask": round(float(r.get("ask", 0)), 2),
+                "last": round(float(r.get("lastPrice", 0)), 2),
+                "iv": round(float(r.get("impliedVolatility", 0)) * 100, 1),
+                "volume": int(r.get("volume", 0) or 0),
+                "expiry_used": closest,
+            }
+        except Exception as e:
+            print(f"  [option attempt {attempt}/{retries}] {ticker} {expiry} {strike}: {e}")
+            if attempt < retries:
+                time.sleep(2 * attempt)
+    return None
 
 
 # ── Alert History (cooldown) ─────────────────────────────────────────────────
@@ -369,19 +378,26 @@ def main():
     print(f"\n✓ status.json written")
 
     # Push to GitHub so Pages dashboard updates
-    if GITHUB_REPO:
-        try:
-            subprocess.run(["git", "add", "data/status.json"], cwd=BASE_DIR, check=True)
-            subprocess.run(["git", "commit", "-m", f"monitor: update status {datetime.utcnow().strftime('%Y-%m-%d %H:%M')}"],
-                           cwd=BASE_DIR, check=True, capture_output=True)
-            subprocess.run(["git", "push"], cwd=BASE_DIR, check=True, capture_output=True)
-            print("✓ Pushed to GitHub")
-        except subprocess.CalledProcessError as e:
-            # No changes to commit is fine
-            if b"nothing to commit" in (e.stdout or b"") or b"nothing to commit" in (e.stderr or b""):
-                print("✓ No changes to push")
+    try:
+        subprocess.run(["git", "add", "data/status.json"], cwd=BASE_DIR, check=True)
+        commit_result = subprocess.run(
+            ["git", "commit", "-m", f"monitor: update status {datetime.utcnow().strftime('%Y-%m-%d %H:%M')}"],
+            cwd=BASE_DIR, capture_output=True, text=True
+        )
+        if commit_result.returncode == 0:
+            push_result = subprocess.run(
+                ["git", "push"], cwd=BASE_DIR, capture_output=True, text=True
+            )
+            if push_result.returncode == 0:
+                print("✓ Pushed to GitHub")
             else:
-                print(f"  [git] push note: {e}")
+                print(f"  [git push ERROR] {push_result.stderr.strip()}")
+        elif "nothing to commit" in commit_result.stdout + commit_result.stderr:
+            print("✓ No changes to push")
+        else:
+            print(f"  [git commit ERROR] {commit_result.stderr.strip()}")
+    except Exception as e:
+        print(f"  [git ERROR] {e}")
 
     print("\nDone.\n")
 

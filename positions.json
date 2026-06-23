@@ -1,44 +1,82 @@
 {
   "positions": [
     {
-      "id": "nvda-short-put-aug21",
-      "ticker": "NVDA",
-      "strategy": "Short Put",
-      "strike": 210,
-      "expiry": "2025-08-21",
-      "premium_collected": 6.30,
-      "contracts": 1,
-      "open_date": "2025-06-01",
-      "newsletter": "Growth Gazette",
-      "rating": "B",
-      "notes": "Sample position — replace with real trades"
-    },
-    {
       "id": "aapl-covered-call-aug21",
       "ticker": "AAPL",
       "strategy": "Covered Call",
-      "strike": 230,
-      "expiry": "2025-08-21",
-      "premium_collected": 3.50,
+      "strike": 305,
+      "expiry": "2026-08-21",
+      "premium_collected": 5.70,
       "contracts": 1,
-      "open_date": "2025-06-10",
-      "newsletter": "Growth Gazette",
-      "rating": "A",
-      "notes": "Sample position — replace with real trades"
-    },
-    {
-      "id": "tsla-bull-put-spread-aug21",
-      "ticker": "TSLA",
-      "strategy": "Bull Put Spread",
-      "strike_high": 300,
-      "strike_low": 270,
-      "expiry": "2025-08-21",
-      "premium_collected": 4.20,
-      "contracts": 1,
-      "open_date": "2025-06-05",
+      "open_date": "2026-05-21",
       "newsletter": "Growth Gazette",
       "rating": "B",
-      "notes": "Sample position — replace with real trades"
+      "notes": "Sell $305 Call Aug 21"
+    },
+    {
+      "id": "nvda-short-put-jul17",
+      "ticker": "NVDA",
+      "strategy": "Short Put",
+      "strike": 200,
+      "expiry": "2026-07-17",
+      "premium_collected": 6.30,
+      "contracts": 1,
+      "open_date": "2026-06-05",
+      "newsletter": "Growth Gazette",
+      "rating": "A",
+      "notes": "Sell $200 Put Jul 17"
+    },
+    {
+      "id": "orcl-covered-call-jul17",
+      "ticker": "ORCL",
+      "strategy": "Covered Call",
+      "strike": 260,
+      "expiry": "2026-07-17",
+      "premium_collected": 9.40,
+      "contracts": 1,
+      "open_date": "2026-06-01",
+      "newsletter": "Growth Gazette",
+      "rating": "C",
+      "notes": "Sell $260 Call Jul 17"
+    },
+    {
+      "id": "goog-short-put-aug21",
+      "ticker": "GOOG",
+      "strategy": "Short Put",
+      "strike": 340,
+      "expiry": "2026-08-21",
+      "premium_collected": 11.70,
+      "contracts": 1,
+      "open_date": "2026-06-09",
+      "newsletter": "Growth Gazette",
+      "rating": "C",
+      "notes": "Sell $340 Put Aug 21"
+    },
+    {
+      "id": "msft-short-put-aug21",
+      "ticker": "MSFT",
+      "strategy": "Short Put",
+      "strike": 375,
+      "expiry": "2026-08-21",
+      "premium_collected": 10.60,
+      "contracts": 1,
+      "open_date": "2026-06-09",
+      "newsletter": "Growth Gazette",
+      "rating": "C",
+      "notes": "Rolled from $390 Jul 17 to $375 Aug 21 — breakeven ~$364.40"
+    },
+    {
+      "id": "tsm-covered-call-jul17",
+      "ticker": "TSM",
+      "strategy": "Covered Call",
+      "strike": 470,
+      "expiry": "2026-07-17",
+      "premium_collected": 22.50,
+      "contracts": 1,
+      "open_date": "2026-06-18",
+      "newsletter": "Growth Gazette",
+      "rating": "C",
+      "notes": "Sell $470 Call Jul 17"
     }
   ]
 }

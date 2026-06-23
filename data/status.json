@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-23T16:03:06.431581Z",
+  "updated_at": "2026-06-23T16:16:17.753402Z",
   "positions": [
     {
       "id": "aapl-covered-call-aug21",
@@ -13,21 +13,21 @@
       "newsletter": "Growth Gazette",
       "rating": "B",
       "notes": "Sell $305 Call Aug 21",
-      "current_price": 298.06,
+      "current_price": 298.42,
       "option_data": {
-        "bid": 10.0,
-        "ask": 10.35,
-        "last": 10.32,
-        "iv": 27.8,
-        "volume": 361,
+        "bid": 9.65,
+        "ask": 9.85,
+        "last": 9.93,
+        "iv": 26.4,
+        "volume": 363,
         "expiry_used": "2026-08-21"
       },
       "status": {
         "breakeven": 305,
         "breakeven_label": "$305.00 (call strike)",
-        "distance_pct": 2.275409836065573,
+        "distance_pct": 2.1573770491803224,
         "alert_level": "OK",
-        "message": "Stock $298.06 is 2.3% below strike $305.00. Call not threatened.",
+        "message": "Stock $298.42 is 2.2% below strike $305.00. Call not threatened.",
         "risk_direction": "upside"
       }
     },
@@ -43,21 +43,21 @@
       "newsletter": "Growth Gazette",
       "rating": "A",
       "notes": "Sell $200 Put Jul 17",
-      "current_price": 202.25,
+      "current_price": 202.73,
       "option_data": {
-        "bid": 6.85,
-        "ask": 6.9,
-        "last": 6.82,
-        "iv": 38.0,
-        "volume": 2526,
+        "bid": 6.65,
+        "ask": 6.75,
+        "last": 6.8,
+        "iv": 38.3,
+        "volume": 3734,
         "expiry_used": "2026-07-17"
       },
       "status": {
         "breakeven": 193.7,
         "breakeven_label": "$193.70",
-        "distance_pct": 4.414042333505427,
+        "distance_pct": 4.6618482188952,
         "alert_level": "OK",
-        "message": "Stock $202.25 is 4.4% above breakeven $193.70. Safe.",
+        "message": "Stock $202.73 is 4.7% above breakeven $193.70. Safe.",
         "risk_direction": "downside"
       }
     },
@@ -73,21 +73,21 @@
       "newsletter": "Growth Gazette",
       "rating": "C",
       "notes": "Sell $260 Call Jul 17",
-      "current_price": 170.13,
+      "current_price": 168.72,
       "option_data": {
         "bid": 0.15,
         "ask": 0.4,
         "last": 0.2,
-        "iv": 77.2,
+        "iv": 78.5,
         "volume": 12,
         "expiry_used": "2026-07-17"
       },
       "status": {
         "breakeven": 260,
         "breakeven_label": "$260.00 (call strike)",
-        "distance_pct": 34.565384615384616,
+        "distance_pct": 35.107692307692304,
         "alert_level": "OK",
-        "message": "Stock $170.13 is 34.6% below strike $260.00. Call not threatened.",
+        "message": "Stock $168.72 is 35.1% below strike $260.00. Call not threatened.",
         "risk_direction": "upside"
       }
     },
@@ -103,51 +103,51 @@
       "newsletter": "Growth Gazette",
       "rating": "C",
       "notes": "Sell $340 Put Aug 21",
-      "current_price": 345.8,
+      "current_price": 345.38,
       "option_data": {
-        "bid": 16.1,
+        "bid": 16.05,
         "ask": 16.75,
-        "last": 15.89,
-        "iv": 35.2,
-        "volume": 75,
+        "last": 16.43,
+        "iv": 34.9,
+        "volume": 78,
         "expiry_used": "2026-08-21"
       },
       "status": {
         "breakeven": 328.3,
         "breakeven_label": "$328.30",
-        "distance_pct": 5.330490405117271,
+        "distance_pct": 5.2025586353944515,
         "alert_level": "OK",
-        "message": "Stock $345.80 is 5.3% above breakeven $328.30. Safe.",
+        "message": "Stock $345.38 is 5.2% above breakeven $328.30. Safe.",
         "risk_direction": "downside"
       }
     },
     {
-      "id": "msft-short-put-jul17",
+      "id": "msft-short-put-aug21",
       "ticker": "MSFT",
       "strategy": "Short Put",
-      "strike": 390,
-      "expiry": "2026-07-17",
-      "premium_collected": 10.3,
+      "strike": 375,
+      "expiry": "2026-08-21",
+      "premium_collected": 10.6,
       "contracts": 1,
       "open_date": "2026-06-09",
       "newsletter": "Growth Gazette",
       "rating": "C",
-      "notes": "Sell $390 Put Jul 17",
-      "current_price": 372.63,
+      "notes": "Rolled from $390 Jul 17 to $375 Aug 21 \u2014 breakeven ~$364.40",
+      "current_price": 372.12,
       "option_data": {
-        "bid": 21.8,
-        "ask": 22.45,
-        "last": 22.05,
-        "iv": 29.6,
-        "volume": 212,
-        "expiry_used": "2026-07-17"
+        "bid": 22.25,
+        "ask": 22.65,
+        "last": 21.6,
+        "iv": 35.1,
+        "volume": 468,
+        "expiry_used": "2026-08-21"
       },
       "status": {
-        "breakeven": 379.7,
-        "breakeven_label": "$379.70",
-        "distance_pct": -1.8619963128785868,
-        "alert_level": "CRITICAL",
-        "message": "\ud83d\udd34 CRITICAL: Stock $372.63 has breached breakeven $379.70 by 1.9%. Consider rolling or closing.",
+        "breakeven": 364.4,
+        "breakeven_label": "$364.40",
+        "distance_pct": 2.118551042810106,
+        "alert_level": "OK",
+        "message": "Stock $372.12 is 2.1% above breakeven $364.40. Safe.",
         "risk_direction": "downside"
       }
     },
@@ -163,21 +163,21 @@
       "newsletter": "Growth Gazette",
       "rating": "C",
       "notes": "Sell $470 Call Jul 17",
-      "current_price": 442.68,
+      "current_price": 443.11,
       "option_data": {
-        "bid": 12.85,
-        "ask": 14.35,
-        "last": 13.5,
-        "iv": 52.4,
-        "volume": 324,
+        "bid": 13.4,
+        "ask": 14.4,
+        "last": 13.95,
+        "iv": 52.7,
+        "volume": 329,
         "expiry_used": "2026-07-17"
       },
       "status": {
         "breakeven": 470,
         "breakeven_label": "$470.00 (call strike)",
-        "distance_pct": 5.812765957446807,
+        "distance_pct": 5.721276595744678,
         "alert_level": "OK",
-        "message": "Stock $442.68 is 5.8% below strike $470.00. Call not threatened.",
+        "message": "Stock $443.11 is 5.7% below strike $470.00. Call not threatened.",
         "risk_direction": "upside"
       }
     }

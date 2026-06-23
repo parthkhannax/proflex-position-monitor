@@ -37,9 +37,12 @@
   .refresh-btn{
     background:none;border:1px solid var(--border);color:var(--gold);
     padding:4px 12px;font-family:var(--font);font-size:10px;cursor:pointer;
-    border-radius:2px;letter-spacing:1px;
+    border-radius:2px;letter-spacing:1px;transition:all 0.15s;
   }
-  .refresh-btn:hover{border-color:var(--gold);background:#faf6ec}
+  .refresh-btn:hover:not(:disabled){border-color:var(--gold);background:#faf6ec}
+  .refresh-btn:disabled{opacity:0.5;cursor:not-allowed}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .spinning{display:inline-block;animation:spin 0.7s linear infinite}
 
   /* SUMMARY BAR */
   .summary{display:flex;gap:0;border-bottom:1px solid var(--border);background:var(--surface)}
@@ -141,7 +144,7 @@
   <div class="header-right">
     <span class="pill">AUTO-REFRESH 60s</span>
     <span class="ts" id="ts">—</span>
-    <button class="refresh-btn" onclick="loadData()">↻ REFRESH</button>
+    <button class="refresh-btn" id="refresh-btn" onclick="handleRefresh()">↻ REFRESH</button>
   </div>
 </header>
 
@@ -286,10 +289,20 @@ function updateSummary(positions) {
   }
 }
 
+function handleRefresh() {
+  const btn = document.getElementById("refresh-btn");
+  if (btn.disabled) return;
+  loadData();
+}
+
 async function loadData() {
+  const btn = document.getElementById("refresh-btn");
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinning">↻</span> FETCHING...';
+
   document.getElementById("err").innerHTML = "";
   try {
-    const r = await fetch(STATUS_URL + "?t=" + Date.now());
+    const r = await fetch(STATUS_URL + "?t=" + Date.now(), { cache: "no-store" });
     if (!r.ok) throw new Error(`HTTP ${r.status}`);
     const data = await r.json();
     const ts = new Date(data.updated_at);
@@ -302,6 +315,9 @@ async function loadData() {
   } catch(e) {
     document.getElementById("err").innerHTML = `<div class="err">ERROR: ${e.message} — run monitor.py first</div>`;
     document.getElementById("loading").style.display = "none";
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = "↻ REFRESH";
   }
 }
 

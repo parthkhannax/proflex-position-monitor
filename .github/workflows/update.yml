@@ -7,14 +7,19 @@ on:
   workflow_dispatch: {}   # allow manual "Run workflow" button
 
 permissions:
-  contents: write   # needed to commit status.json back to the repo
+  contents: write   # commit status.json back to the repo
+  pages: write      # deploy to GitHub Pages
+  id-token: write   # required by deploy-pages
 
 concurrency:
-  group: price-update
+  group: pages
   cancel-in-progress: false
 
 jobs:
   update:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -38,7 +43,7 @@ jobs:
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
         run: python monitor.py
 
-      - name: Commit and push status.json
+      - name: Commit status.json back to repo
         run: |
           git config user.name "proflex-monitor-bot"
           git config user.email "actions@github.com"
@@ -49,3 +54,12 @@ jobs:
             git commit -m "monitor: auto-update prices $(date -u '+%Y-%m-%d %H:%M UTC')"
             git push
           fi
+
+      # Deploy Pages directly from this run — a GITHUB_TOKEN push does NOT
+      # trigger deploy.yml, so we publish here instead of relying on it.
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - uses: actions/deploy-pages@v4
+        id: deployment

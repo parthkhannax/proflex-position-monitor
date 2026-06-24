@@ -58,6 +58,8 @@ proflex-position-monitor/
 ├── index.html          # GitHub Pages dashboard (auto-refreshes every 60s, white quant theme)
 ├── monitor.py          # Main monitoring script — run this locally or via cron
 ├── positions.json      # Your open positions (edit this to add/remove trades)
+├── closed_positions.json  # Archived closed trades (managed by close_position.py)
+├── close_position.py   # CLI to close a trade and archive it with return inputs
 ├── requirements.txt    # Python dependencies
 ├── .env.example        # Environment variable template
 ├── .env                # Your secrets — NEVER committed (in .gitignore)
@@ -198,8 +200,24 @@ tail -f /Users/parthkhanna/Desktop/claude-work/proflex-monitor/monitor.log
 ### Add a new position
 Edit `positions.json` — add a new object to the `positions` array using the templates above. Use a unique `id` (e.g. `msft-short-put-jul17`).
 
-### Close / remove a position
-Delete its entry from `positions.json`. The dashboard and monitor will stop tracking it on the next run.
+### Close a position (archive it with realized returns)
+Use `close_position.py` — it moves the trade from `positions.json` to `closed_positions.json` with the closing details, so it shows up under the **Closed** and **Dashboard** tabs.
+
+```bash
+# Expired worthless / kept full premium (the common winning close)
+python3 close_position.py nvda-short-put-jul17 --reason "expired worthless"
+
+# Bought back to close at $1.20 per share
+python3 close_position.py aapl-covered-call-aug21 --price 1.20 --reason "bought to close"
+
+# Close and push to GitHub in one step
+python3 close_position.py orcl-covered-call-jul17 --price 2.10 --push
+```
+
+`--price` is the option's per-share buyback price (0 / omitted = expired worthless, full premium kept). `--date` defaults to today.
+
+### Just remove a position (no archive)
+Delete its entry from `positions.json`. The dashboard and monitor stop tracking it on the next run — but it won't appear in Closed/Dashboard stats.
 
 ### After any change to positions.json
 ```bash
@@ -222,6 +240,27 @@ The GitHub Pages dashboard at `https://parthkhannax.github.io/proflex-position-m
 - Row highlights: yellow (Warning), red tint (Critical), deep red (Breached)
 
 The dashboard reads `data/status.json` which `monitor.py` pushes to GitHub on every run.
+
+### Tabs
+
+- **Open** — live breakeven monitor (the original view).
+- **Closed** — every archived trade with days held, realized P/L, absolute return %, and simple annualized return.
+- **Dashboard** — portfolio performance across all closed trades: hit/loss ratio, win rate, total realized P/L, and conviction-weighted annualized return.
+
+### Realized return methodology
+
+For each closed trade:
+
+| Metric | Formula |
+|---|---|
+| Realized P/L | `(premium_collected − buyback_price) × 100 × contracts` |
+| Capital at risk | `strike × 100 × contracts` (spread: `width × 100 × contracts`) |
+| Absolute return % | `P/L ÷ capital at risk` |
+| Days held | `close_date − open_date` (min 1) |
+| Simple annualized % | `absolute return × 365 ÷ days held` (not compounded) |
+| Outcome | WIN if P/L > 0, LOSS if < 0, SCRATCH if 0 |
+
+**Portfolio annualized return** is a *conviction-weighted* mean of each trade's annualized return, weighted by Growth Gazette rating: **AA=4, A=3, B=2, C=1**. Higher-conviction trades count more. **Hit/Loss ratio** = winning trades ÷ losing trades.
 
 ---
 

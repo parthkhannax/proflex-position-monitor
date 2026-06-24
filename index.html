@@ -127,6 +127,43 @@
   .b-harvest{background:#dcfce7;color:var(--ok);border:1px solid #bbf7d0}
   .b-watch{background:#fef3c7;color:var(--warn);border:1px solid #fde68a}
 
+  /* TABS */
+  .tabs{display:flex;gap:0;border-bottom:1px solid var(--border);background:var(--bg)}
+  .tab{
+    padding:10px 22px;font-family:var(--font);font-size:10px;font-weight:600;
+    letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);
+    background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;
+    transition:all 0.15s;
+  }
+  .tab:hover{color:var(--text)}
+  .tab.active{color:var(--gold);border-bottom-color:var(--gold)}
+  .tab .tab-count{color:var(--muted);font-weight:400;margin-left:6px}
+  .view{display:none}
+  .view.active{display:block}
+
+  /* CLOSED TABLE — return cells */
+  .ret{font-size:13px;font-weight:700}
+  .ret.pos{color:var(--ok)}
+  .ret.neg{color:var(--crit)}
+  .b-win{background:#dcfce7;color:var(--ok);border:1px solid #bbf7d0}
+  .b-loss{background:#fee2e2;color:var(--crit);border:1px solid #fca5a5}
+  .b-scratch{background:#f3f4f6;color:var(--muted);border:1px solid var(--border)}
+
+  /* DASHBOARD — stat cards */
+  .dash{padding:24px}
+  .dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:24px}
+  .card{
+    border:1px solid var(--border);border-radius:4px;padding:18px 20px;background:var(--surface);
+  }
+  .card-label{font-size:9px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+  .card-val{font-size:28px;font-weight:700;color:var(--text);line-height:1}
+  .card-val.pos{color:var(--ok)}
+  .card-val.neg{color:var(--crit)}
+  .card-sub{font-size:10px;color:var(--muted);margin-top:6px;letter-spacing:0.3px}
+  .dash-note{font-size:10px;color:var(--muted);letter-spacing:0.3px;line-height:1.6;max-width:760px;margin-top:8px}
+  .dash-note b{color:var(--gold)}
+  .dash-empty{padding:48px 24px;color:var(--muted);font-size:11px;letter-spacing:1px}
+
   /* FOOTER */
   footer{padding:16px 24px;color:var(--muted);font-size:9px;letter-spacing:1px;border-top:1px solid var(--border)}
 
@@ -148,45 +185,107 @@
   </div>
 </header>
 
-<div class="summary">
-  <div class="sum-item"><div class="sum-label">Positions</div><div class="sum-val neutral" id="s-total">—</div></div>
-  <div class="sum-item"><div class="sum-label">Safe</div><div class="sum-val ok" id="s-ok">—</div></div>
-  <div class="sum-item"><div class="sum-label">Warning</div><div class="sum-val warn" id="s-warn">—</div></div>
-  <div class="sum-item"><div class="sum-label">Critical</div><div class="sum-val crit" id="s-crit">—</div></div>
-  <div class="sum-item"><div class="sum-label">Breached</div><div class="sum-val" style="color:#ff0000" id="s-breach">—</div></div>
-  <div class="sum-item"><div class="sum-label">Ripe to Close (70%+)</div><div class="sum-val ok" id="s-ripe">—</div></div>
+<div class="tabs">
+  <button class="tab active" id="tab-open" onclick="switchTab('open')">Open<span class="tab-count" id="tc-open"></span></button>
+  <button class="tab" id="tab-closed" onclick="switchTab('closed')">Closed<span class="tab-count" id="tc-closed"></span></button>
+  <button class="tab" id="tab-dashboard" onclick="switchTab('dashboard')">Dashboard</button>
 </div>
 
-<div class="alert-banner" id="alert-banner"></div>
 <div id="err"></div>
 
-<div class="table-wrap">
-  <div class="loading" id="loading">LOADING POSITIONS...</div>
-  <table id="tbl" style="display:none">
-    <thead>
-      <tr>
-        <th>Ticker</th>
-        <th>Strategy</th>
-        <th>Strike(s)</th>
-        <th>Expiry</th>
-        <th>Premium</th>
-        <th>Breakeven</th>
-        <th>Stock Price</th>
-        <th>Opt Last</th>
-        <th>IV</th>
-        <th>Distance</th>
-        <th>Decay %</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-    <tbody id="tbody"></tbody>
-  </table>
+<!-- ── OPEN VIEW ───────────────────────────────────────────────── -->
+<div class="view active" id="view-open">
+  <div class="summary">
+    <div class="sum-item"><div class="sum-label">Positions</div><div class="sum-val neutral" id="s-total">—</div></div>
+    <div class="sum-item"><div class="sum-label">Safe</div><div class="sum-val ok" id="s-ok">—</div></div>
+    <div class="sum-item"><div class="sum-label">Warning</div><div class="sum-val warn" id="s-warn">—</div></div>
+    <div class="sum-item"><div class="sum-label">Critical</div><div class="sum-val crit" id="s-crit">—</div></div>
+    <div class="sum-item"><div class="sum-label">Breached</div><div class="sum-val" style="color:#ff0000" id="s-breach">—</div></div>
+    <div class="sum-item"><div class="sum-label">Ripe to Close (70%+)</div><div class="sum-val ok" id="s-ripe">—</div></div>
+  </div>
+
+  <div class="alert-banner" id="alert-banner"></div>
+
+  <div class="table-wrap">
+    <div class="loading" id="loading">LOADING POSITIONS...</div>
+    <table id="tbl" style="display:none">
+      <thead>
+        <tr>
+          <th>Ticker</th>
+          <th>Strategy</th>
+          <th>Strike(s)</th>
+          <th>Expiry</th>
+          <th>Premium</th>
+          <th>Breakeven</th>
+          <th>Stock Price</th>
+          <th>Opt Last</th>
+          <th>IV</th>
+          <th>Distance</th>
+          <th>Decay %</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ── CLOSED VIEW ─────────────────────────────────────────────── -->
+<div class="view" id="view-closed">
+  <div class="table-wrap">
+    <div class="dash-empty" id="closed-empty" style="display:none">NO CLOSED TRADES YET — close one with <code>close_position.py</code> or a trade alert.</div>
+    <table id="closed-tbl" style="display:none">
+      <thead>
+        <tr>
+          <th>Ticker</th>
+          <th>Strategy</th>
+          <th>Rating</th>
+          <th>Opened</th>
+          <th>Closed</th>
+          <th>Days</th>
+          <th>Premium</th>
+          <th>Buyback</th>
+          <th>P/L</th>
+          <th>Capital</th>
+          <th>Abs Return</th>
+          <th>Annualized</th>
+          <th>Outcome</th>
+        </tr>
+      </thead>
+      <tbody id="closed-tbody"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ── DASHBOARD VIEW ──────────────────────────────────────────── -->
+<div class="view" id="view-dashboard">
+  <div class="dash">
+    <div class="dash-empty" id="dash-empty" style="display:none">NO CLOSED TRADES YET — portfolio performance appears here once trades are closed.</div>
+    <div id="dash-content" style="display:none">
+      <div class="dash-grid">
+        <div class="card"><div class="card-label">Closed Trades</div><div class="card-val" id="d-total">—</div><div class="card-sub" id="d-wl">—</div></div>
+        <div class="card"><div class="card-label">Hit / Loss Ratio</div><div class="card-val" id="d-ratio">—</div><div class="card-sub" id="d-winrate">—</div></div>
+        <div class="card"><div class="card-label">Total Realized P/L</div><div class="card-val" id="d-pl">—</div><div class="card-sub">across all closed trades</div></div>
+        <div class="card"><div class="card-label">Portfolio Annualized Return</div><div class="card-val" id="d-annual">—</div><div class="card-sub">conviction-weighted by rating</div></div>
+        <div class="card"><div class="card-label">Avg Abs Return / Trade</div><div class="card-val" id="d-avgabs">—</div><div class="card-sub">simple average</div></div>
+        <div class="card"><div class="card-label">Avg Hold</div><div class="card-val" id="d-avghold">—</div><div class="card-sub">days, open → close</div></div>
+      </div>
+      <div class="dash-note">
+        <b>Method.</b> Absolute return = P/L ÷ capital at risk (strike × 100 × contracts; spread width × 100 for spreads).
+        Simple annualized = absolute return × 365 ÷ days held — not compounded.
+        <b>Portfolio annualized</b> is a conviction-weighted mean of each trade's annualized return, weighted by Growth Gazette rating:
+        <b>AA=4, A=3, B=2, C=1</b>. Hit/Loss ratio = winning trades ÷ losing trades.
+      </div>
+    </div>
+  </div>
 </div>
 
 <footer>PROFLEX FINANCE · INTERNAL USE ONLY · proflexfinance.com</footer>
 
 <script>
 const STATUS_URL = "data/status.json";
+const CLOSED_URL = "closed_positions.json";
+const RATING_WEIGHT = { AA: 4, A: 3, B: 2, C: 1 };
 
 function rowClass(level) {
   return level === "CRITICAL" ? "row-critical" : level === "BREACHED" ? "row-breached" : level === "WARNING" ? "row-warning" : "";
@@ -289,10 +388,128 @@ function updateSummary(positions) {
   }
 }
 
+// ── CLOSED TRADES — realized return math ──────────────────────────
+function capitalAtRisk(p) {
+  const c = p.contracts || 1;
+  if (p.strategy === "Bull Put Spread") {
+    return (p.strike_high - p.strike_low) * 100 * c;
+  }
+  const strike = p.strike || p.strike_high;
+  return strike * 100 * c;
+}
+
+function daysBetween(openDate, closeDate) {
+  const ms = new Date(closeDate) - new Date(openDate);
+  return Math.max(1, Math.round(ms / 86400000));
+}
+
+function computeClosed(p) {
+  const c = p.contracts || 1;
+  const buyback = p.close_price || 0;
+  const pl = (p.premium_collected - buyback) * 100 * c;          // realized dollars
+  const capital = capitalAtRisk(p);
+  const absReturn = capital > 0 ? (pl / capital) * 100 : 0;       // % on capital at risk
+  const days = daysBetween(p.open_date, p.close_date);
+  const annualized = absReturn * (365 / days);                    // simple, not compounded
+  const outcome = pl > 0 ? "WIN" : pl < 0 ? "LOSS" : "SCRATCH";
+  return { ...p, pl, capital, absReturn, days, annualized, outcome };
+}
+
+function pmt(v) { return (v >= 0 ? "+" : "−") + "$" + Math.abs(v).toLocaleString(undefined, {maximumFractionDigits:0}); }
+function pct(v) { return (v >= 0 ? "+" : "") + v.toFixed(1) + "%"; }
+
+function renderClosedRows(rows) {
+  return rows.map(r => {
+    const strike = r.strategy === "Bull Put Spread" ? `$${r.strike_high}/$${r.strike_low}` : `$${r.strike || r.strike_high}`;
+    const oc = r.outcome === "WIN" ? "b-win" : r.outcome === "LOSS" ? "b-loss" : "b-scratch";
+    const plCls = r.pl >= 0 ? "pos" : "neg";
+    return `<tr title="${(r.close_reason||"").replace(/"/g,"'")}">
+      <td><span class="c-ticker">${r.ticker}</span><span class="c-sub">${strike} · ${r.expiry||""}</span></td>
+      <td><span class="c-muted">${r.strategy}</span></td>
+      <td><span class="c-num">${r.rating||"—"}</span></td>
+      <td><span class="c-muted">${r.open_date||"—"}</span></td>
+      <td><span class="c-muted">${r.close_date||"—"}</span></td>
+      <td><span class="c-num">${r.days}</span></td>
+      <td><span class="c-num">$${r.premium_collected.toFixed(2)}</span></td>
+      <td><span class="c-num">$${(r.close_price||0).toFixed(2)}</span></td>
+      <td><span class="ret ${plCls}">${pmt(r.pl)}</span></td>
+      <td><span class="c-muted">$${r.capital.toLocaleString()}</span></td>
+      <td><span class="ret ${r.absReturn>=0?'pos':'neg'}">${pct(r.absReturn)}</span></td>
+      <td><span class="ret ${r.annualized>=0?'pos':'neg'}">${pct(r.annualized)}</span></td>
+      <td><span class="badge ${oc}">${r.outcome}</span></td>
+    </tr>`;
+  }).join("");
+}
+
+function renderDashboard(rows) {
+  const empty = document.getElementById("dash-empty");
+  const content = document.getElementById("dash-content");
+  if (!rows.length) { empty.style.display = "block"; content.style.display = "none"; return; }
+  empty.style.display = "none"; content.style.display = "block";
+
+  const wins = rows.filter(r => r.outcome === "WIN").length;
+  const losses = rows.filter(r => r.outcome === "LOSS").length;
+  const totalPL = rows.reduce((a, r) => a + r.pl, 0);
+  const avgAbs = rows.reduce((a, r) => a + r.absReturn, 0) / rows.length;
+  const avgHold = Math.round(rows.reduce((a, r) => a + r.days, 0) / rows.length);
+
+  // Conviction-weighted portfolio annualized return (weight by rating).
+  let wSum = 0, wRet = 0;
+  rows.forEach(r => { const w = RATING_WEIGHT[r.rating] || 1; wSum += w; wRet += w * r.annualized; });
+  const portfolioAnnual = wSum > 0 ? wRet / wSum : 0;
+
+  const ratio = losses === 0 ? (wins > 0 ? "∞" : "—") : (wins / losses).toFixed(2);
+  const winRate = rows.length ? ((wins / rows.length) * 100).toFixed(0) : 0;
+
+  const set = (id, txt, cls) => { const el = document.getElementById(id); el.textContent = txt; if (cls !== undefined) el.className = "card-val " + cls; };
+  set("d-total", rows.length);
+  document.getElementById("d-wl").textContent = `${wins} win · ${losses} loss`;
+  set("d-ratio", ratio);
+  document.getElementById("d-winrate").textContent = `${winRate}% win rate`;
+  set("d-pl", pmt(totalPL), totalPL >= 0 ? "pos" : "neg");
+  set("d-annual", pct(portfolioAnnual), portfolioAnnual >= 0 ? "pos" : "neg");
+  set("d-avgabs", pct(avgAbs), avgAbs >= 0 ? "pos" : "neg");
+  set("d-avghold", avgHold);
+}
+
+async function loadClosed() {
+  try {
+    const r = await fetch(CLOSED_URL + "?t=" + Date.now(), { cache: "no-store" });
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    const data = await r.json();
+    const raw = data.closed || [];
+    // Newest close first.
+    const rows = raw.map(computeClosed).sort((a, b) => new Date(b.close_date) - new Date(a.close_date));
+
+    document.getElementById("tc-closed").textContent = rows.length ? `(${rows.length})` : "";
+    const tbl = document.getElementById("closed-tbl");
+    const emptyEl = document.getElementById("closed-empty");
+    if (rows.length) {
+      document.getElementById("closed-tbody").innerHTML = renderClosedRows(rows);
+      tbl.style.display = "table"; emptyEl.style.display = "none";
+    } else {
+      tbl.style.display = "none"; emptyEl.style.display = "block";
+    }
+    renderDashboard(rows);
+  } catch (e) {
+    document.getElementById("closed-empty").style.display = "block";
+    document.getElementById("closed-empty").textContent = "Could not load closed trades: " + e.message;
+    renderDashboard([]);
+  }
+}
+
+function switchTab(name) {
+  ["open", "closed", "dashboard"].forEach(t => {
+    document.getElementById("tab-" + t).classList.toggle("active", t === name);
+    document.getElementById("view-" + t).classList.toggle("active", t === name);
+  });
+}
+
 function handleRefresh() {
   const btn = document.getElementById("refresh-btn");
   if (btn.disabled) return;
   loadData();
+  loadClosed();
 }
 
 async function loadData() {
@@ -308,6 +525,7 @@ async function loadData() {
     const ts = new Date(data.updated_at);
     document.getElementById("ts").textContent = "UPDATED " + ts.toLocaleTimeString([], {hour:"2-digit",minute:"2-digit",second:"2-digit"});
     const positions = data.positions || [];
+    document.getElementById("tc-open").textContent = positions.length ? `(${positions.length})` : "";
     updateSummary(positions);
     document.getElementById("tbody").innerHTML = renderRows(positions);
     document.getElementById("loading").style.display = "none";
@@ -321,8 +539,9 @@ async function loadData() {
   }
 }
 
-loadData();
-setInterval(loadData, 60000);
+function refreshAll() { loadData(); loadClosed(); }
+refreshAll();
+setInterval(refreshAll, 60000);
 </script>
 </body>
 </html>

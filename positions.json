@@ -1,19 +1,6 @@
 {
   "positions": [
     {
-      "id": "aapl-covered-call-aug21",
-      "ticker": "AAPL",
-      "strategy": "Covered Call",
-      "strike": 305,
-      "expiry": "2026-08-21",
-      "premium_collected": 5.70,
-      "contracts": 1,
-      "open_date": "2026-05-21",
-      "newsletter": "Growth Gazette",
-      "rating": "B",
-      "notes": "Sell $305 Call Aug 21"
-    },
-    {
       "id": "nvda-short-put-jul17",
       "ticker": "NVDA",
       "strategy": "Short Put",

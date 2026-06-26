@@ -51,6 +51,19 @@
       "newsletter": "Growth Gazette",
       "rating": "C",
       "notes": "Rolled from $390 Jul 17 to $375 Aug 21 — breakeven ~$364.40"
+    },
+    {
+      "id": "avgo-short-put-jul17",
+      "ticker": "AVGO",
+      "strategy": "Short Put",
+      "strike": 370,
+      "expiry": "2026-07-17",
+      "premium_collected": 16.00,
+      "contracts": 1,
+      "open_date": "2026-06-26",
+      "newsletter": "Growth Gazette",
+      "rating": "C",
+      "notes": "Sell $370 Put Jul 17 — breakeven ~$354.00"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-29T20:32:05.477284Z",
+  "updated_at": "2026-06-29T22:00:02.482620Z",
   "positions": [
     {
       "id": "nvda-short-put-jul17",
@@ -15,11 +15,11 @@
       "notes": "Sell $200 Put Jul 17",
       "current_price": 194.97,
       "option_data": {
-        "bid": 8.75,
-        "ask": 8.95,
-        "last": 8.86,
-        "iv": 34.0,
-        "volume": 1206,
+        "bid": 8.85,
+        "ask": 9.0,
+        "last": 8.9,
+        "iv": 34.3,
+        "volume": 1209,
         "expiry_used": "2026-07-17"
       },
       "status": {
@@ -106,9 +106,9 @@
       "current_price": 368.57,
       "option_data": {
         "bid": 25.35,
-        "ask": 26.45,
+        "ask": 26.3,
         "last": 26.09,
-        "iv": 40.5,
+        "iv": 40.3,
         "volume": 196,
         "expiry_used": "2026-08-21"
       },

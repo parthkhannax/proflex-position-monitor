@@ -64,6 +64,19 @@
       "newsletter": "Growth Gazette",
       "rating": "C",
       "notes": "Sell $370 Put Jul 17 — breakeven ~$354.00"
+    },
+    {
+      "id": "hims-covered-call-aug21",
+      "ticker": "HIMS",
+      "strategy": "Covered Call",
+      "strike": 40,
+      "expiry": "2026-08-21",
+      "premium_collected": 5.50,
+      "contracts": 1,
+      "open_date": "2026-07-01",
+      "newsletter": "Growth Gazette",
+      "rating": "C",
+      "notes": "Sell $40 Call Aug 21 — breakeven ~$45.50"
     }
   ]
 }

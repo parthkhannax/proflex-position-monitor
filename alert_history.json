@@ -4,5 +4,7 @@
   "nvda-short-put-jul17:WARNING": "2026-07-01T15:41:48.104369",
   "msft-short-put-aug21:CRITICAL": "2026-06-25T21:15:52.407394",
   "nvda-short-put-jul17:CRITICAL": "2026-06-29T16:38:45.059019",
-  "goog-short-put-aug21:WARNING": "2026-06-26T21:06:21.146710"
+  "goog-short-put-aug21:WARNING": "2026-06-26T21:06:21.146710",
+  "tlt-covered-call-aug21:WARNING": "2026-07-01T17:33:27.552008",
+  "aapl-covered-call-aug21:BREACHED": "2026-07-01T17:33:28.017069"
 }

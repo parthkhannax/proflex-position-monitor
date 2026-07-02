@@ -181,6 +181,7 @@
   <div class="header-right">
     <span class="pill">AUTO-REFRESH 60s</span>
     <span class="ts" id="ts">—</span>
+    <button class="refresh-btn" id="csv-btn" onclick="exportTradesheets()" title="Download Growth Gazette + Income Insider open-position CSVs">⤓ EXPORT CSV</button>
     <button class="refresh-btn" id="refresh-btn" onclick="handleRefresh()">↻ REFRESH</button>
   </div>
 </header>
@@ -525,6 +526,7 @@ async function loadData() {
     const ts = new Date(data.updated_at);
     document.getElementById("ts").textContent = "UPDATED " + ts.toLocaleTimeString([], {hour:"2-digit",minute:"2-digit",second:"2-digit"});
     const positions = data.positions || [];
+    currentPositions = positions;
     document.getElementById("tc-open").textContent = positions.length ? `(${positions.length})` : "";
     updateSummary(positions);
     document.getElementById("tbody").innerHTML = renderRows(positions);
@@ -537,6 +539,96 @@ async function loadData() {
     btn.disabled = false;
     btn.innerHTML = "↻ REFRESH";
   }
+}
+
+// ── CSV EXPORT — weekly tradesheet format ─────────────────────────
+// Emits two CSVs (Growth Gazette + Income Insider) with the exact
+// tradesheet columns: #, Ticker, Rating, Start Date, Strategy, Strike,
+// Expiry, Avg Price, Latest Price, Return.
+let currentPositions = [];
+
+function fmtDate(iso) {
+  // "2026-06-05" -> "6/5/2026" (no leading zeros, no timezone shift)
+  if (!iso) return "";
+  const [y, m, d] = iso.split("-").map(Number);
+  if (!y || !m || !d) return iso;
+  return `${m}/${d}/${y}`;
+}
+
+function optionType(strategy) {
+  const s = (strategy || "").toLowerCase();
+  if (s.includes("put")) return "Put";
+  if (s.includes("call")) return "Call";
+  return "";
+}
+
+function strikeLabel(p) {
+  return p.strategy === "Bull Put Spread" ? `$${p.strike_high}/$${p.strike_low}` : `$${p.strike}`;
+}
+
+function unrealizedReturnPct(p) {
+  // Same capital-at-risk math as closed trades, using current option last
+  // as the notional buyback: (avg − latest) / strike.
+  const last = p.option_data?.last;
+  if (p.premium_collected == null || last == null) return null;
+  const c = p.contracts || 1;
+  const pl = (p.premium_collected - last) * 100 * c;
+  const capital = capitalAtRisk(p);
+  return capital > 0 ? (pl / capital) * 100 : null;
+}
+
+function csvCell(v) {
+  const s = String(v ?? "");
+  return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+}
+
+function buildTradesheetCsv(positions) {
+  const headers = ["#","Ticker","Rating","Start Date","Strategy","Strike","Expiry","Avg Price","Latest Price","Return"];
+  const rows = positions.map((p, i) => {
+    const type = optionType(p.strategy);
+    const strategyText = `${p.strategy} (Sell ${strikeLabel(p)} ${type})`.trim();
+    const last = p.option_data?.last;
+    const ret = unrealizedReturnPct(p);
+    return [
+      i + 1,
+      p.ticker || "",
+      p.rating || "",
+      fmtDate(p.open_date),
+      strategyText,
+      p.strike != null ? `$${Number(p.strike).toFixed(2)}` : strikeLabel(p),
+      fmtDate(p.expiry),
+      p.premium_collected != null ? `$${Number(p.premium_collected).toFixed(2)}` : "",
+      last != null ? `$${Number(last).toFixed(2)}` : "",
+      ret != null ? `${ret >= 0 ? "+" : ""}${ret.toFixed(2)}%` : "",
+    ].map(csvCell).join(",");
+  });
+  return [headers.join(","), ...rows].join("\r\n");
+}
+
+function downloadCsv(filename, text) {
+  const blob = new Blob([text], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+function exportTradesheets() {
+  if (!currentPositions.length) { alert("No positions loaded yet — hit REFRESH first."); return; }
+  const groups = [
+    { newsletter: "Growth Gazette", file: "growth-gazette-open-positions.csv" },
+    { newsletter: "Income Insider", file: "income-insider-open-positions.csv" },
+  ];
+  let exported = 0;
+  groups.forEach(g => {
+    const rows = currentPositions.filter(p => p.newsletter === g.newsletter);
+    if (!rows.length) return;
+    downloadCsv(g.file, buildTradesheetCsv(rows));
+    exported++;
+  });
+  if (!exported) alert("No Growth Gazette or Income Insider positions found to export.");
 }
 
 function refreshAll() { loadData(); loadClosed(); }

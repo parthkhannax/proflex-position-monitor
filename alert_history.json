@@ -1,11 +1,11 @@
 {
   "msft-short-put-jul17:CRITICAL": "2026-06-23T16:03:05.698591",
   "msft-short-put-aug21:WARNING": "2026-06-30T19:19:08.054999",
-  "nvda-short-put-jul17:WARNING": "2026-07-03T19:51:10.333528",
+  "nvda-short-put-jul17:WARNING": "2026-07-03T21:05:50.824079",
   "msft-short-put-aug21:CRITICAL": "2026-06-25T21:15:52.407394",
   "nvda-short-put-jul17:CRITICAL": "2026-07-02T18:48:35.541549",
   "goog-short-put-aug21:WARNING": "2026-06-26T21:06:21.146710",
-  "tlt-covered-call-aug21:WARNING": "2026-07-03T19:51:12.538239",
-  "aapl-covered-call-aug21:BREACHED": "2026-07-03T19:51:12.922001",
-  "avgo-short-put-jul17:WARNING": "2026-07-03T19:51:11.897582"
+  "tlt-covered-call-aug21:WARNING": "2026-07-03T21:05:52.655407",
+  "aapl-covered-call-aug21:BREACHED": "2026-07-03T21:05:53.063775",
+  "avgo-short-put-jul17:WARNING": "2026-07-03T21:05:52.053554"
 }

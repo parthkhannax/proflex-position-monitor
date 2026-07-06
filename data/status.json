@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-06T20:25:34.787092Z",
+  "updated_at": "2026-07-06T21:55:13.225764Z",
   "positions": [
     {
       "id": "nvda-short-put-jul17",
@@ -15,11 +15,11 @@
       "notes": "Sell $200 Put Jul 17",
       "current_price": 195.55,
       "option_data": {
-        "bid": 7.2,
-        "ask": 7.5,
-        "last": 6.95,
-        "iv": 34.7,
-        "volume": 3089,
+        "bid": 7.45,
+        "ask": 7.6,
+        "last": 7.6,
+        "iv": 35.4,
+        "volume": 3124,
         "expiry_used": "2026-07-17"
       },
       "status": {
@@ -76,10 +76,10 @@
       "current_price": 364.9,
       "option_data": {
         "bid": 8.0,
-        "ask": 8.65,
-        "last": 8.29,
-        "iv": 36.7,
-        "volume": 234,
+        "ask": 8.55,
+        "last": 8.3,
+        "iv": 36.5,
+        "volume": 245,
         "expiry_used": "2026-08-21"
       },
       "status": {
@@ -106,10 +106,10 @@
       "current_price": 386.74,
       "option_data": {
         "bid": 15.9,
-        "ask": 16.5,
-        "last": 16.2,
-        "iv": 40.2,
-        "volume": 498,
+        "ask": 16.45,
+        "last": 16.19,
+        "iv": 40.1,
+        "volume": 501,
         "expiry_used": "2026-08-21"
       },
       "status": {
@@ -135,10 +135,10 @@
       "notes": "Sell $370 Put Jul 17 \u2014 breakeven ~$354.00",
       "current_price": 373.9,
       "option_data": {
-        "bid": 10.6,
-        "ask": 11.95,
+        "bid": 10.7,
+        "ask": 11.5,
         "last": 10.55,
-        "iv": 51.4,
+        "iv": 49.7,
         "volume": 377,
         "expiry_used": "2026-07-17"
       },
@@ -165,11 +165,11 @@
       "notes": "Sell $40 Call Aug 21 \u2014 breakeven ~$45.50",
       "current_price": 38.28,
       "option_data": {
-        "bid": 5.4,
-        "ask": 5.55,
-        "last": 5.45,
+        "bid": 5.35,
+        "ask": 5.6,
+        "last": 5.46,
         "iv": 113.2,
-        "volume": 1097,
+        "volume": 1122,
         "expiry_used": "2026-08-21"
       },
       "status": {
@@ -196,10 +196,10 @@
       "current_price": 85.45,
       "option_data": {
         "bid": 0.51,
-        "ask": 0.52,
-        "last": 0.51,
-        "iv": 9.2,
-        "volume": 1803,
+        "ask": 0.53,
+        "last": 0.52,
+        "iv": 9.3,
+        "volume": 1810,
         "expiry_used": "2026-08-21"
       },
       "status": {
@@ -225,11 +225,11 @@
       "notes": "Sell $260 Call Aug 21 \u2014 avg price $6.90",
       "current_price": 312.66,
       "option_data": {
-        "bid": 54.65,
-        "ask": 56.3,
-        "last": 55.58,
-        "iv": 48.3,
-        "volume": 161,
+        "bid": 54.45,
+        "ask": 56.35,
+        "last": 55.34,
+        "iv": 48.5,
+        "volume": 162,
         "expiry_used": "2026-08-21"
       },
       "status": {
@@ -255,11 +255,11 @@
       "notes": "Sell $320 Call Aug 21",
       "current_price": 312.66,
       "option_data": {
-        "bid": 9.25,
-        "ask": 9.45,
+        "bid": 9.1,
+        "ask": 9.35,
         "last": 9.25,
-        "iv": 28.2,
-        "volume": 2974,
+        "iv": 28.0,
+        "volume": 3193,
         "expiry_used": "2026-08-21"
       },
       "status": {
@@ -285,11 +285,11 @@
       "notes": "Sell $80 Put Aug 21 \u2014 breakeven ~$68.60",
       "current_price": 80.64,
       "option_data": {
-        "bid": 11.85,
+        "bid": 11.9,
         "ask": 12.2,
-        "last": 11.96,
-        "iv": 108.0,
-        "volume": 2709,
+        "last": 12.1,
+        "iv": 108.2,
+        "volume": 2710,
         "expiry_used": "2026-08-21"
       },
       "status": {

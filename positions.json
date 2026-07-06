@@ -116,6 +116,19 @@
       "newsletter": "Growth Gazette",
       "rating": "B",
       "notes": "Sell $320 Call Aug 21"
+    },
+    {
+      "id": "asts-short-put-aug21",
+      "ticker": "ASTS",
+      "strategy": "Short Put",
+      "strike": 80,
+      "expiry": "2026-08-21",
+      "premium_collected": 11.40,
+      "contracts": 1,
+      "open_date": "2026-07-06",
+      "newsletter": "Growth Gazette",
+      "rating": "C",
+      "notes": "Sell $80 Put Aug 21 — breakeven ~$68.60"
     }
   ]
 }

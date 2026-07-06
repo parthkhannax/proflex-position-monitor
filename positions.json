@@ -105,19 +105,6 @@
       "notes": "Sell $260 Call Aug 21 — avg price $6.90"
     },
     {
-      "id": "nke-covered-call-aug21",
-      "ticker": "NKE",
-      "strategy": "Covered Call",
-      "strike": 47.5,
-      "expiry": "2026-08-21",
-      "premium_collected": 4.00,
-      "contracts": 1,
-      "open_date": "2026-05-29",
-      "newsletter": "Income Insider",
-      "rating": "B",
-      "notes": "Sell $47.5 Call Aug 21 — avg price $4.00"
-    },
-    {
       "id": "aapl-covered-call-320-aug21",
       "ticker": "AAPL",
       "strategy": "Covered Call",

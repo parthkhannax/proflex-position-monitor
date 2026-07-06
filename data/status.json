@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-06T16:17:51.953669Z",
+  "updated_at": "2026-07-06T16:21:06.403725Z",
   "positions": [
     {
       "id": "nvda-short-put-jul17",
@@ -13,21 +13,21 @@
       "newsletter": "Growth Gazette",
       "rating": "A",
       "notes": "Sell $200 Put Jul 17",
-      "current_price": 197.22,
+      "current_price": 197.35,
       "option_data": {
-        "bid": 7.05,
-        "ask": 7.15,
+        "bid": 7.0,
+        "ask": 7.2,
         "last": 7.08,
-        "iv": 39.4,
+        "iv": 40.3,
         "volume": 848,
         "expiry_used": "2026-07-17"
       },
       "status": {
         "breakeven": 193.7,
         "breakeven_label": "$193.70",
-        "distance_pct": 1.8172431595250442,
+        "distance_pct": 1.8843572534847732,
         "alert_level": "WARNING",
-        "message": "\u26a0\ufe0f Stock $197.22 is within 1.8% of breakeven $193.70. Monitor closely.",
+        "message": "\u26a0\ufe0f Stock $197.35 is within 1.9% of breakeven $193.70. Monitor closely.",
         "risk_direction": "downside"
       }
     },
@@ -43,7 +43,7 @@
       "newsletter": "Growth Gazette",
       "rating": "C",
       "notes": "Sell $260 Call Jul 17",
-      "current_price": 142.96,
+      "current_price": 142.87,
       "option_data": {
         "bid": 0.02,
         "ask": 0.04,
@@ -55,9 +55,9 @@
       "status": {
         "breakeven": 260,
         "breakeven_label": "$260.00 (call strike)",
-        "distance_pct": 45.01538461538461,
+        "distance_pct": 45.05,
         "alert_level": "OK",
-        "message": "Stock $142.96 is 45.0% below strike $260.00. Call not threatened.",
+        "message": "Stock $142.87 is 45.0% below strike $260.00. Call not threatened.",
         "risk_direction": "upside"
       }
     },
@@ -73,21 +73,21 @@
       "newsletter": "Growth Gazette",
       "rating": "C",
       "notes": "Sell $340 Put Aug 21",
-      "current_price": 362.19,
+      "current_price": 361.9,
       "option_data": {
-        "bid": 9.35,
+        "bid": 9.05,
         "ask": 9.65,
-        "last": 9.62,
-        "iv": 37.2,
-        "volume": 19,
+        "last": 9.45,
+        "iv": 37.0,
+        "volume": 20,
         "expiry_used": "2026-08-21"
       },
       "status": {
         "breakeven": 328.3,
         "breakeven_label": "$328.30",
-        "distance_pct": 10.32287541882424,
+        "distance_pct": 10.234541577825148,
         "alert_level": "OK",
-        "message": "Stock $362.19 is 10.3% above breakeven $328.30. Safe.",
+        "message": "Stock $361.90 is 10.2% above breakeven $328.30. Safe.",
         "risk_direction": "downside"
       }
     },
@@ -103,7 +103,7 @@
       "newsletter": "Growth Gazette",
       "rating": "C",
       "notes": "Rolled from $390 Jul 17 to $375 Aug 21 \u2014 breakeven ~$364.40",
-      "current_price": 384.07,
+      "current_price": 384.1,
       "option_data": {
         "bid": 15.85,
         "ask": 16.3,
@@ -115,9 +115,9 @@
       "status": {
         "breakeven": 364.4,
         "breakeven_label": "$364.40",
-        "distance_pct": 5.39791437980242,
+        "distance_pct": 5.406147091108685,
         "alert_level": "OK",
-        "message": "Stock $384.07 is 5.4% above breakeven $364.40. Safe.",
+        "message": "Stock $384.10 is 5.4% above breakeven $364.40. Safe.",
         "risk_direction": "downside"
       }
     },
@@ -133,21 +133,21 @@
       "newsletter": "Growth Gazette",
       "rating": "C",
       "notes": "Sell $370 Put Jul 17 \u2014 breakeven ~$354.00",
-      "current_price": 375.51,
+      "current_price": 375.1,
       "option_data": {
-        "bid": 10.9,
-        "ask": 11.45,
+        "bid": 10.7,
+        "ask": 11.35,
         "last": 11.0,
-        "iv": 51.0,
+        "iv": 51.1,
         "volume": 272,
         "expiry_used": "2026-07-17"
       },
       "status": {
         "breakeven": 354.0,
         "breakeven_label": "$354.00",
-        "distance_pct": 6.0762711864406755,
+        "distance_pct": 5.960451977401136,
         "alert_level": "OK",
-        "message": "Stock $375.51 is 6.1% above breakeven $354.00. Safe.",
+        "message": "Stock $375.10 is 6.0% above breakeven $354.00. Safe.",
         "risk_direction": "downside"
       }
     },
@@ -163,21 +163,21 @@
       "newsletter": "Growth Gazette",
       "rating": "C",
       "notes": "Sell $40 Call Aug 21 \u2014 breakeven ~$45.50",
-      "current_price": 38.67,
+      "current_price": 38.64,
       "option_data": {
         "bid": 5.6,
-        "ask": 5.75,
-        "last": 5.7,
-        "iv": 113.1,
-        "volume": 663,
+        "ask": 5.8,
+        "last": 5.67,
+        "iv": 113.7,
+        "volume": 665,
         "expiry_used": "2026-08-21"
       },
       "status": {
         "breakeven": 40,
         "breakeven_label": "$40.00 (call strike)",
-        "distance_pct": 3.324999999999996,
+        "distance_pct": 3.399999999999999,
         "alert_level": "OK",
-        "message": "Stock $38.67 is 3.3% below strike $40.00. Call not threatened.",
+        "message": "Stock $38.64 is 3.4% below strike $40.00. Call not threatened.",
         "risk_direction": "upside"
       }
     },
@@ -193,21 +193,21 @@
       "newsletter": "Income Insider",
       "rating": "AA",
       "notes": "Sell $87 Call Aug 21 \u2014 avg price $1.05",
-      "current_price": 85.28,
+      "current_price": 85.32,
       "option_data": {
         "bid": 0.49,
         "ask": 0.5,
         "last": 0.5,
-        "iv": 9.4,
+        "iv": 9.3,
         "volume": 902,
         "expiry_used": "2026-08-21"
       },
       "status": {
         "breakeven": 87,
         "breakeven_label": "$87.00 (call strike)",
-        "distance_pct": 1.9770114942528723,
+        "distance_pct": 1.9310344827586285,
         "alert_level": "WARNING",
-        "message": "\u26a0\ufe0f Stock $85.28 is within 2.0% of call strike $87.00. Risk of assignment approaching.",
+        "message": "\u26a0\ufe0f Stock $85.32 is within 1.9% of call strike $87.00. Risk of assignment approaching.",
         "risk_direction": "upside"
       }
     },
@@ -223,21 +223,21 @@
       "newsletter": "Income Insider",
       "rating": "B",
       "notes": "Sell $260 Call Aug 21 \u2014 avg price $6.90",
-      "current_price": 312.43,
+      "current_price": 312.72,
       "option_data": {
         "bid": 54.9,
-        "ask": 56.7,
+        "ask": 55.8,
         "last": 54.89,
-        "iv": 50.9,
+        "iv": 45.9,
         "volume": 2,
         "expiry_used": "2026-08-21"
       },
       "status": {
         "breakeven": 260,
         "breakeven_label": "$260.00 (call strike)",
-        "distance_pct": -20.165384615384617,
+        "distance_pct": -20.276923076923087,
         "alert_level": "BREACHED",
-        "message": "\ud83d\udea8 BREACHED: Stock $312.43 is 20.2% above call strike $260.00. Deep ITM \u2014 shares likely called away at expiry.",
+        "message": "\ud83d\udea8 BREACHED: Stock $312.72 is 20.3% above call strike $260.00. Deep ITM \u2014 shares likely called away at expiry.",
         "risk_direction": "upside"
       }
     },
@@ -253,21 +253,21 @@
       "newsletter": "Growth Gazette",
       "rating": "B",
       "notes": "Sell $320 Call Aug 21",
-      "current_price": 312.43,
+      "current_price": 312.72,
       "option_data": {
-        "bid": 9.9,
-        "ask": 10.1,
-        "last": 9.96,
-        "iv": 29.9,
-        "volume": 2312,
+        "bid": 9.7,
+        "ask": 9.85,
+        "last": 9.8,
+        "iv": 29.1,
+        "volume": 2329,
         "expiry_used": "2026-08-21"
       },
       "status": {
         "breakeven": 320,
         "breakeven_label": "$320.00 (call strike)",
-        "distance_pct": 2.365624999999998,
+        "distance_pct": 2.2749999999999915,
         "alert_level": "OK",
-        "message": "Stock $312.43 is 2.4% below strike $320.00. Call not threatened.",
+        "message": "Stock $312.72 is 2.3% below strike $320.00. Call not threatened.",
         "risk_direction": "upside"
       }
     }

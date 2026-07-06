@@ -95,6 +95,8 @@
   /* DISTANCE */
   .dist{font-size:12px;font-weight:700;display:flex;align-items:center;gap:4px}
   .dist.ok{color:var(--ok)}
+  .dte-flag{color:var(--crit);font-weight:700}
+  .dte-warn{color:var(--crit)}
   .dist.warn{color:var(--warn)}
   .dist.crit{color:var(--crit)}
   .dist.breach{color:var(--breach)}
@@ -216,6 +218,7 @@
           <th>Strategy</th>
           <th>Strike(s)</th>
           <th>Expiry</th>
+          <th>DTE</th>
           <th>Premium</th>
           <th>Breakeven</th>
           <th>Stock Price</th>
@@ -335,6 +338,19 @@ function n(v, prefix="$", decimals=2) {
   return `<span class="c-opt">${prefix}${parseFloat(v).toFixed(decimals)}</span>`;
 }
 
+function dteHtml(iso) {
+  if (!iso) return '<span class="c-muted">—</span>';
+  const exp = new Date(iso + "T00:00:00");
+  if (isNaN(exp)) return '<span class="c-muted">—</span>';
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  const days = Math.round((exp - today) / 86400000);
+  const cls = days <= 5 ? " dte-flag" : "";
+  const label = days < 0 ? `${days}d` : `${days}d`;
+  const flag = days <= 5 ? ' <span class="dte-warn">⚠</span>' : "";
+  return `<span class="c-num${cls}">${label}${flag}</span>`;
+}
+
 function renderRows(positions) {
   return positions.map(p => {
     const s = p.status || {};
@@ -350,6 +366,7 @@ function renderRows(positions) {
       <td><span class="c-muted">${p.strategy}</span></td>
       <td><span class="c-num">${strike}</span></td>
       <td><span class="c-muted">${p.expiry||"—"}</span></td>
+      <td>${dteHtml(p.expiry)}</td>
       <td><span class="c-num">$${(p.premium_collected||0).toFixed(2)}</span></td>
       <td>${be}</td>
       <td>${price}</td>

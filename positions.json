@@ -116,6 +116,19 @@
       "newsletter": "Income Insider",
       "rating": "B",
       "notes": "Sell $47.5 Call Aug 21 — avg price $4.00"
+    },
+    {
+      "id": "aapl-covered-call-320-aug21",
+      "ticker": "AAPL",
+      "strategy": "Covered Call",
+      "strike": 320,
+      "expiry": "2026-08-21",
+      "premium_collected": 10.00,
+      "contracts": 1,
+      "open_date": "2026-07-06",
+      "newsletter": "Growth Gazette",
+      "rating": "B",
+      "notes": "Sell $320 Call Aug 21"
     }
   ]
 }

@@ -1,17 +1,17 @@
 {
   "positions": [
     {
-      "id": "nvda-short-put-jul17",
+      "id": "nvda-short-put-aug21",
       "ticker": "NVDA",
       "strategy": "Short Put",
-      "strike": 200,
-      "expiry": "2026-07-17",
-      "premium_collected": 6.30,
+      "strike": 190,
+      "expiry": "2026-08-21",
+      "premium_collected": 5.80,
       "contracts": 1,
       "open_date": "2026-06-05",
       "newsletter": "Growth Gazette",
       "rating": "A",
-      "notes": "Sell $200 Put Jul 17"
+      "notes": "Rolled from $200 Jul 17 to $190 Aug 21 for $0.50 debit — breakeven ~$184.20"
     },
     {
       "id": "orcl-covered-call-jul17",

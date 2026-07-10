@@ -103,6 +103,19 @@
       "newsletter": "Growth Gazette",
       "rating": "C",
       "notes": "Sell $80 Put Aug 21 — breakeven ~$68.60"
+    },
+    {
+      "id": "gdx-short-put-aug21",
+      "ticker": "GDX",
+      "strategy": "Short Put",
+      "strike": 75,
+      "expiry": "2026-08-21",
+      "premium_collected": 4.10,
+      "contracts": 1,
+      "open_date": "2026-07-10",
+      "newsletter": "Growth Gazette",
+      "rating": "B",
+      "notes": "Sell $75 Put Aug 21 — breakeven ~$70.90; gold bottom entry"
     }
   ]
 }

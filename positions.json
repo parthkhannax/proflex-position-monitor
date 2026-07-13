@@ -116,6 +116,19 @@
       "newsletter": "Growth Gazette",
       "rating": "B",
       "notes": "Sell $75 Put Aug 21 — breakeven ~$70.90; gold bottom entry"
+    },
+    {
+      "id": "mu-short-put-aug21",
+      "ticker": "MU",
+      "strategy": "Short Put",
+      "strike": 800,
+      "expiry": "2026-08-21",
+      "premium_collected": 65.00,
+      "contracts": 1,
+      "open_date": "2026-07-13",
+      "newsletter": "Growth Gazette",
+      "rating": "C",
+      "notes": "Sell $800 Put Aug 21 — breakeven ~$735.00"
     }
   ]
 }

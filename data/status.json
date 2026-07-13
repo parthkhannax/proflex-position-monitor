@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-13T20:34:36.811198Z",
+  "updated_at": "2026-07-13T21:36:03.130841Z",
   "positions": [
     {
       "id": "nvda-short-put-aug21",
@@ -15,7 +15,7 @@
       "notes": "Rolled from $200 Jul 17 to $190 Aug 21 for $0.50 debit \u2014 breakeven ~$184.20",
       "current_price": 203.53,
       "option_data": {
-        "bid": 4.8,
+        "bid": 4.85,
         "ask": 4.9,
         "last": 4.74,
         "iv": 39.6,
@@ -105,7 +105,7 @@
       "notes": "Rolled from $390 Jul 17 to $375 Aug 21 \u2014 breakeven ~$364.40",
       "current_price": 390.99,
       "option_data": {
-        "bid": 13.35,
+        "bid": 13.45,
         "ask": 13.85,
         "last": 13.88,
         "iv": 41.3,
@@ -137,9 +137,9 @@
       "option_data": {
         "bid": 2.94,
         "ask": 3.1,
-        "last": 2.88,
+        "last": 3.04,
         "iv": 110.1,
-        "volume": 593,
+        "volume": 610,
         "expiry_used": "2026-08-21"
       },
       "status": {
@@ -165,7 +165,7 @@
       "notes": "Sell $260 Call Aug 21 \u2014 avg price $6.90",
       "current_price": 317.31,
       "option_data": {
-        "bid": 58.6,
+        "bid": 57.6,
         "ask": 60.65,
         "last": 58.75,
         "iv": 53.6,

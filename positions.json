@@ -14,19 +14,6 @@
       "notes": "Rolled from $200 Jul 17 to $190 Aug 21 for $0.50 debit — breakeven ~$184.20"
     },
     {
-      "id": "orcl-covered-call-jul17",
-      "ticker": "ORCL",
-      "strategy": "Covered Call",
-      "strike": 260,
-      "expiry": "2026-07-17",
-      "premium_collected": 9.40,
-      "contracts": 1,
-      "open_date": "2026-06-01",
-      "newsletter": "Growth Gazette",
-      "rating": "C",
-      "notes": "Sell $260 Call Jul 17"
-    },
-    {
       "id": "goog-short-put-aug21",
       "ticker": "GOOG",
       "strategy": "Short Put",

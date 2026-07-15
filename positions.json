@@ -6,12 +6,12 @@
       "strategy": "Short Put",
       "strike": 190,
       "expiry": "2026-08-21",
-      "premium_collected": 5.80,
+      "premium_collected": 5.8,
       "contracts": 1,
       "open_date": "2026-06-05",
       "newsletter": "Growth Gazette",
       "rating": "A",
-      "notes": "Rolled from $200 Jul 17 to $190 Aug 21 for $0.50 debit — breakeven ~$184.20"
+      "notes": "Rolled from $200 Jul 17 to $190 Aug 21 for $0.50 debit \u2014 breakeven ~$184.20"
     },
     {
       "id": "goog-short-put-aug21",
@@ -19,7 +19,7 @@
       "strategy": "Short Put",
       "strike": 340,
       "expiry": "2026-08-21",
-      "premium_collected": 11.70,
+      "premium_collected": 11.7,
       "contracts": 1,
       "open_date": "2026-06-09",
       "newsletter": "Growth Gazette",
@@ -32,12 +32,12 @@
       "strategy": "Short Put",
       "strike": 375,
       "expiry": "2026-08-21",
-      "premium_collected": 10.60,
+      "premium_collected": 10.6,
       "contracts": 1,
       "open_date": "2026-06-09",
       "newsletter": "Growth Gazette",
       "rating": "C",
-      "notes": "Rolled from $390 Jul 17 to $375 Aug 21 — breakeven ~$364.40"
+      "notes": "Rolled from $390 Jul 17 to $375 Aug 21 \u2014 breakeven ~$364.40"
     },
     {
       "id": "hims-covered-call-aug21",
@@ -45,12 +45,12 @@
       "strategy": "Covered Call",
       "strike": 40,
       "expiry": "2026-08-21",
-      "premium_collected": 5.50,
+      "premium_collected": 5.5,
       "contracts": 1,
       "open_date": "2026-07-01",
       "newsletter": "Growth Gazette",
       "rating": "C",
-      "notes": "Sell $40 Call Aug 21 — breakeven ~$45.50"
+      "notes": "Sell $40 Call Aug 21 \u2014 breakeven ~$45.50"
     },
     {
       "id": "aapl-covered-call-aug21",
@@ -58,25 +58,25 @@
       "strategy": "Covered Call",
       "strike": 260,
       "expiry": "2026-08-21",
-      "premium_collected": 6.90,
+      "premium_collected": 6.9,
       "contracts": 1,
       "open_date": "2026-06-18",
       "newsletter": "Income Insider",
       "rating": "B",
-      "notes": "Sell $260 Call Aug 21 — avg price $6.90"
+      "notes": "Sell $260 Call Aug 21 \u2014 avg price $6.90"
     },
     {
-      "id": "aapl-covered-call-320-aug21",
+      "id": "aapl-covered-call-330-sep18",
       "ticker": "AAPL",
       "strategy": "Covered Call",
-      "strike": 320,
-      "expiry": "2026-08-21",
-      "premium_collected": 10.00,
+      "strike": 330,
+      "expiry": "2026-09-18",
+      "premium_collected": 8.5,
       "contracts": 1,
       "open_date": "2026-07-06",
       "newsletter": "Growth Gazette",
       "rating": "B",
-      "notes": "Sell $320 Call Aug 21"
+      "notes": "Rolled from $320 Call Aug 21 -> $330 Call Sep 18 for $1.50 net debit"
     },
     {
       "id": "asts-short-put-aug21",
@@ -84,12 +84,12 @@
       "strategy": "Short Put",
       "strike": 80,
       "expiry": "2026-08-21",
-      "premium_collected": 11.40,
+      "premium_collected": 11.4,
       "contracts": 1,
       "open_date": "2026-07-06",
       "newsletter": "Growth Gazette",
       "rating": "C",
-      "notes": "Sell $80 Put Aug 21 — breakeven ~$68.60"
+      "notes": "Sell $80 Put Aug 21 \u2014 breakeven ~$68.60"
     },
     {
       "id": "gdx-short-put-aug21",
@@ -97,12 +97,12 @@
       "strategy": "Short Put",
       "strike": 75,
       "expiry": "2026-08-21",
-      "premium_collected": 4.10,
+      "premium_collected": 4.1,
       "contracts": 1,
       "open_date": "2026-07-10",
       "newsletter": "Growth Gazette",
       "rating": "B",
-      "notes": "Sell $75 Put Aug 21 — breakeven ~$70.90; gold bottom entry"
+      "notes": "Sell $75 Put Aug 21 \u2014 breakeven ~$70.90; gold bottom entry"
     },
     {
       "id": "mu-short-put-aug21",
@@ -110,12 +110,12 @@
       "strategy": "Short Put",
       "strike": 800,
       "expiry": "2026-08-21",
-      "premium_collected": 65.00,
+      "premium_collected": 65.0,
       "contracts": 1,
       "open_date": "2026-07-13",
       "newsletter": "Growth Gazette",
       "rating": "C",
-      "notes": "Sell $800 Put Aug 21 — breakeven ~$735.00"
+      "notes": "Sell $800 Put Aug 21 \u2014 breakeven ~$735.00"
     }
   ]
 }

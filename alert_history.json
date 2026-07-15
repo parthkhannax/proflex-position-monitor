@@ -9,7 +9,8 @@
   "aapl-covered-call-aug21:BREACHED": "2026-07-15T13:42:42.753828",
   "avgo-short-put-jul17:WARNING": "2026-07-03T21:05:52.053554",
   "aapl-covered-call-320-aug21:WARNING": "2026-07-15T13:42:42.877222",
-  "aapl-covered-call-320-aug21:CRITICAL": "2026-07-13T14:25:44.987873",
+  "aapl-covered-call-320-aug21:CRITICAL": "2026-07-15T14:03:17.313721",
   "asts-short-put-aug21:WARNING": "2026-07-14T21:15:48.281081",
-  "asts-short-put-aug21:CRITICAL": "2026-07-15T13:42:43.676818"
+  "asts-short-put-aug21:CRITICAL": "2026-07-15T13:42:43.676818",
+  "aapl-covered-call-330-sep18:WARNING": "2026-07-15T14:32:12.467056"
 }

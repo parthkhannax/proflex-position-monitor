@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-16T20:12:34.090891Z",
+  "updated_at": "2026-07-16T21:18:07.707472Z",
   "positions": [
     {
       "id": "nvda-short-put-aug21",
@@ -15,11 +15,11 @@
       "notes": "Rolled from $200 Jul 17 to $190 Aug 21 for $0.50 debit \u2014 breakeven ~$184.20",
       "current_price": 207.4,
       "option_data": {
-        "bid": 4.0,
-        "ask": 4.1,
-        "last": 4.05,
-        "iv": 42.1,
-        "volume": 3067,
+        "bid": 3.7,
+        "ask": 3.8,
+        "last": 3.75,
+        "iv": 40.6,
+        "volume": 3141,
         "expiry_used": "2026-08-21"
       },
       "status": {
@@ -45,11 +45,11 @@
       "notes": "Sell $340 Put Aug 21",
       "current_price": 353.81,
       "option_data": {
-        "bid": 10.25,
-        "ask": 10.7,
-        "last": 10.47,
-        "iv": 37.9,
-        "volume": 222,
+        "bid": 10.15,
+        "ask": 10.6,
+        "last": 10.6,
+        "iv": 37.7,
+        "volume": 1240,
         "expiry_used": "2026-08-21"
       },
       "status": {
@@ -75,7 +75,7 @@
       "notes": "Rolled from $390 Jul 17 to $375 Aug 21 \u2014 breakeven ~$364.40",
       "current_price": 401.1,
       "option_data": {
-        "bid": 10.55,
+        "bid": 10.2,
         "ask": 11.05,
         "last": 10.95,
         "iv": 44.0,
@@ -103,21 +103,21 @@
       "newsletter": "Growth Gazette",
       "rating": "C",
       "notes": "Sell $40 Call Aug 21 \u2014 breakeven ~$45.50",
-      "current_price": 33.66,
+      "current_price": 33.68,
       "option_data": {
-        "bid": 2.47,
-        "ask": 2.61,
-        "last": 2.5,
-        "iv": 109.7,
-        "volume": 607,
+        "bid": 2.44,
+        "ask": 2.56,
+        "last": 2.58,
+        "iv": 108.5,
+        "volume": 697,
         "expiry_used": "2026-08-21"
       },
       "status": {
         "breakeven": 40,
         "breakeven_label": "$40.00 (call strike)",
-        "distance_pct": 15.850000000000009,
+        "distance_pct": 15.8,
         "alert_level": "OK",
-        "message": "Stock $33.66 is 15.9% below strike $40.00. Call not threatened.",
+        "message": "Stock $33.68 is 15.8% below strike $40.00. Call not threatened.",
         "risk_direction": "upside"
       }
     },
@@ -135,11 +135,11 @@
       "notes": "Sell $260 Call Aug 21 \u2014 avg price $6.90",
       "current_price": 333.26,
       "option_data": {
-        "bid": 73.1,
-        "ask": 74.2,
-        "last": 73.51,
-        "iv": 47.5,
-        "volume": 9,
+        "bid": 73.25,
+        "ask": 75.15,
+        "last": 73.9,
+        "iv": 55.5,
+        "volume": 10,
         "expiry_used": "2026-08-21"
       },
       "status": {
@@ -165,11 +165,11 @@
       "notes": "Rolled from $320 Call Aug 21 -> $330 Call Sep 18 for $1.50 net debit",
       "current_price": 333.26,
       "option_data": {
-        "bid": 17.9,
-        "ask": 18.35,
-        "last": 18.17,
-        "iv": 29.9,
-        "volume": 1165,
+        "bid": 18.45,
+        "ask": 18.8,
+        "last": 18.6,
+        "iv": 30.7,
+        "volume": 1241,
         "expiry_used": "2026-09-18"
       },
       "status": {
@@ -195,11 +195,11 @@
       "notes": "Sell $80 Put Aug 21 \u2014 breakeven ~$68.60",
       "current_price": 55.01,
       "option_data": {
-        "bid": 26.55,
-        "ask": 27.55,
-        "last": 27.06,
-        "iv": 117.9,
-        "volume": 437,
+        "bid": 26.25,
+        "ask": 27.2,
+        "last": 26.75,
+        "iv": 111.3,
+        "volume": 439,
         "expiry_used": "2026-08-21"
       },
       "status": {
@@ -223,21 +223,21 @@
       "newsletter": "Growth Gazette",
       "rating": "B",
       "notes": "Sell $75 Put Aug 21 \u2014 breakeven ~$70.90; gold bottom entry",
-      "current_price": 71.47,
+      "current_price": 71.4,
       "option_data": {
-        "bid": 5.75,
-        "ask": 6.05,
+        "bid": 5.6,
+        "ask": 5.9,
         "last": 5.79,
-        "iv": 43.5,
+        "iv": 41.3,
         "volume": 228,
         "expiry_used": "2026-08-21"
       },
       "status": {
         "breakeven": 70.9,
         "breakeven_label": "$70.90",
-        "distance_pct": 0.8039492242595108,
+        "distance_pct": 0.7052186177715091,
         "alert_level": "WARNING",
-        "message": "\u26a0\ufe0f Stock $71.47 is within 0.8% of breakeven $70.90. Monitor closely.",
+        "message": "\u26a0\ufe0f Stock $71.40 is within 0.7% of breakeven $70.90. Monitor closely.",
         "risk_direction": "downside"
       }
     },
@@ -255,11 +255,11 @@
       "notes": "Sell $800 Put Aug 21 \u2014 breakeven ~$735.00",
       "current_price": 853.2,
       "option_data": {
-        "bid": 75.9,
-        "ask": 77.25,
-        "last": 76.87,
-        "iv": 96.6,
-        "volume": 2870,
+        "bid": 74.45,
+        "ask": 76.3,
+        "last": 75.5,
+        "iv": 95.4,
+        "volume": 2895,
         "expiry_used": "2026-08-21"
       },
       "status": {

@@ -129,6 +129,19 @@
       "newsletter": "Growth Gazette",
       "rating": "A",
       "notes": "Sell $380 Put Aug 21 \u2014 breakeven ~$360.00; $380 support flagged in Growth Gazette"
+    },
+    {
+      "id": "nke-covered-call-oct18",
+      "ticker": "NKE",
+      "strategy": "Covered Call",
+      "strike": 47.5,
+      "expiry": "2026-10-18",
+      "premium_collected": 2.5,
+      "contracts": 1,
+      "open_date": "2026-07-17",
+      "newsletter": "Income Insider",
+      "rating": "B",
+      "notes": "Sell $47.50 Call Oct 18 \u2014 breakeven ~$50.00"
     }
   ]
 }

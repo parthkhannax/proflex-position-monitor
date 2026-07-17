@@ -116,6 +116,19 @@
       "newsletter": "Growth Gazette",
       "rating": "C",
       "notes": "Sell $800 Put Aug 21 \u2014 breakeven ~$735.00"
+    },
+    {
+      "id": "tsla-short-put-aug21",
+      "ticker": "TSLA",
+      "strategy": "Short Put",
+      "strike": 380,
+      "expiry": "2026-08-21",
+      "premium_collected": 20.0,
+      "contracts": 1,
+      "open_date": "2026-07-17",
+      "newsletter": "Growth Gazette",
+      "rating": "A",
+      "notes": "Sell $380 Put Aug 21 \u2014 breakeven ~$360.00; $380 support flagged in Growth Gazette"
     }
   ]
 }

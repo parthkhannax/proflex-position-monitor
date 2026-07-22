@@ -40,19 +40,6 @@
       "notes": "Rolled from $390 Jul 17 to $375 Aug 21 \u2014 breakeven ~$364.40"
     },
     {
-      "id": "hims-covered-call-aug21",
-      "ticker": "HIMS",
-      "strategy": "Covered Call",
-      "strike": 40,
-      "expiry": "2026-08-21",
-      "premium_collected": 5.5,
-      "contracts": 1,
-      "open_date": "2026-07-01",
-      "newsletter": "Growth Gazette",
-      "rating": "C",
-      "notes": "Sell $40 Call Aug 21 \u2014 breakeven ~$45.50"
-    },
-    {
       "id": "aapl-covered-call-aug21",
       "ticker": "AAPL",
       "strategy": "Covered Call",

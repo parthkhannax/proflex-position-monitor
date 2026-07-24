@@ -523,9 +523,30 @@ function switchTab(name) {
   });
 }
 
-function handleRefresh() {
+async function handleRefresh() {
   const btn = document.getElementById("refresh-btn");
   if (btn.disabled) return;
+  // On localhost (Proflex Terminal), trigger a live price pull via the local
+  // server before re-reading status.json. On GitHub Pages there's no server,
+  // so /api/refresh fails and we fall back to re-fetching the static file.
+  const isLocal = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+  if (isLocal) {
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinning">↻</span> PULLING LIVE…';
+    try {
+      const r = await fetch("/api/refresh", { method: "POST" });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok || j.ok === false) {
+        document.getElementById("err").innerHTML =
+          `<div class="err">Live refresh failed${j.error ? ": " + j.error : ""} — showing last saved data</div>`;
+      }
+    } catch (e) {
+      // no local server (e.g. opened as a file) — just re-read status.json
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = "↻ REFRESH";
+    }
+  }
   loadData();
   loadClosed();
 }

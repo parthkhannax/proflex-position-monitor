@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-10T20:24:15.363968Z",
+  "updated_at": "2026-08-10T21:12:41.790282Z",
   "positions": [
     {
       "id": "nvda-short-put-aug21",
@@ -47,9 +47,9 @@
       "option_data": {
         "bid": 1.8,
         "ask": 2.23,
-        "last": 2.05,
+        "last": 2.0,
         "iv": 30.6,
-        "volume": 249,
+        "volume": 251,
         "expiry_used": "2026-08-21"
       },
       "status": {
@@ -137,9 +137,9 @@
       "option_data": {
         "bid": 2.95,
         "ask": 3.1,
-        "last": 3.0,
+        "last": 3.05,
         "iv": 25.2,
-        "volume": 4239,
+        "volume": 4240,
         "expiry_used": "2026-09-18"
       },
       "status": {

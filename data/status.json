@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-19T20:26:00.511791Z",
+  "updated_at": "2026-08-19T20:54:44.511468Z",
   "positions": [
     {
       "id": "nvda-short-put-aug21",
@@ -135,11 +135,11 @@
       "notes": "Rolled from $320 Call Aug 21 -> $330 Call Sep 18 for $1.50 net debit",
       "current_price": 316.83,
       "option_data": {
-        "bid": 4.1,
-        "ask": 4.25,
-        "last": 4.2,
-        "iv": 25.0,
-        "volume": 24064,
+        "bid": 4.25,
+        "ask": 4.3,
+        "last": 4.25,
+        "iv": 25.2,
+        "volume": 24070,
         "expiry_used": "2026-09-18"
       },
       "status": {
@@ -193,7 +193,7 @@
       "newsletter": "Growth Gazette",
       "rating": "B",
       "notes": "Sell $75 Put Aug 21 \u2014 breakeven ~$70.90; gold bottom entry",
-      "current_price": 97.31,
+      "current_price": 97.33,
       "option_data": {
         "bid": 0.0,
         "ask": 0.01,
@@ -205,9 +205,9 @@
       "status": {
         "breakeven": 70.9,
         "breakeven_label": "$70.90",
-        "distance_pct": 37.2496473906911,
+        "distance_pct": 37.27785613540196,
         "alert_level": "OK",
-        "message": "Stock $97.31 is 37.2% above breakeven $70.90. Safe.",
+        "message": "Stock $97.33 is 37.3% above breakeven $70.90. Safe.",
         "risk_direction": "downside"
       }
     },

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-04T21:29:07.034276Z",
+  "updated_at": "2026-09-07T18:07:25.188035Z",
   "positions": [
     {
       "id": "nvda-short-put-aug21",
@@ -15,12 +15,12 @@
       "notes": "Rolled from $200 Jul 17 to $190 Aug 21 for $0.50 debit \u2014 breakeven ~$184.20",
       "current_price": 230.36,
       "option_data": {
-        "bid": 0.0,
-        "ask": 0.01,
-        "last": 0.01,
-        "iv": 121.9,
-        "volume": 2651,
-        "expiry_used": "2026-09-04"
+        "bid": 0.05,
+        "ask": 0.2,
+        "last": 0.06,
+        "iv": 101.2,
+        "volume": 3543,
+        "expiry_used": "2026-09-09"
       },
       "status": {
         "breakeven": 184.2,
@@ -45,12 +45,12 @@
       "notes": "Sell $340 Put Aug 21",
       "current_price": 335.31,
       "option_data": {
-        "bid": 4.05,
-        "ask": 5.3,
-        "last": 4.3,
-        "iv": 31.3,
-        "volume": 1321,
-        "expiry_used": "2026-09-04"
+        "bid": 6.8,
+        "ask": 7.55,
+        "last": 7.1,
+        "iv": 30.8,
+        "volume": 444,
+        "expiry_used": "2026-09-11"
       },
       "status": {
         "breakeven": 328.3,
@@ -76,11 +76,11 @@
       "current_price": 499.7,
       "option_data": {
         "bid": 0.0,
-        "ask": 0.01,
-        "last": 0.01,
-        "iv": 168.8,
-        "volume": 22,
-        "expiry_used": "2026-09-04"
+        "ask": 0.02,
+        "last": 0.06,
+        "iv": 101.6,
+        "volume": 2,
+        "expiry_used": "2026-09-09"
       },
       "status": {
         "breakeven": 364.4,
@@ -104,14 +104,7 @@
       "rating": "B",
       "notes": "Sell $260 Call Aug 21 \u2014 avg price $6.90",
       "current_price": 319.97,
-      "option_data": {
-        "bid": 59.45,
-        "ask": 61.8,
-        "last": 61.01,
-        "iv": 234.1,
-        "volume": 39,
-        "expiry_used": "2026-09-04"
-      },
+      "option_data": null,
       "status": {
         "breakeven": 260,
         "breakeven_label": "$260.00 (call strike)",
@@ -138,7 +131,7 @@
         "bid": 2.7,
         "ask": 2.79,
         "last": 2.69,
-        "iv": 25.2,
+        "iv": 28.2,
         "volume": 11977,
         "expiry_used": "2026-09-18"
       },
@@ -165,12 +158,12 @@
       "notes": "Sell $80 Put Aug 21 \u2014 breakeven ~$68.60",
       "current_price": 62.31,
       "option_data": {
-        "bid": 15.75,
-        "ask": 18.95,
-        "last": 19.23,
-        "iv": 453.9,
-        "volume": 3,
-        "expiry_used": "2026-09-04"
+        "bid": 16.3,
+        "ask": 18.85,
+        "last": 17.93,
+        "iv": 197.7,
+        "volume": 8,
+        "expiry_used": "2026-09-11"
       },
       "status": {
         "breakeven": 68.6,
@@ -196,11 +189,11 @@
       "current_price": 99.26,
       "option_data": {
         "bid": 0.0,
-        "ask": 0.01,
-        "last": 0.01,
-        "iv": 187.5,
+        "ask": 0.3,
+        "last": 0.03,
+        "iv": 127.3,
         "volume": 1,
-        "expiry_used": "2026-09-04"
+        "expiry_used": "2026-09-11"
       },
       "status": {
         "breakeven": 70.9,
@@ -225,12 +218,12 @@
       "notes": "Sell $800 Put Aug 21 \u2014 breakeven ~$735.00",
       "current_price": 1016.59,
       "option_data": {
-        "bid": 0.0,
-        "ask": 0.01,
-        "last": 0.01,
-        "iv": 134.4,
-        "volume": 279,
-        "expiry_used": "2026-09-04"
+        "bid": 0.08,
+        "ask": 0.14,
+        "last": 0.11,
+        "iv": 100.6,
+        "volume": 461,
+        "expiry_used": "2026-09-09"
       },
       "status": {
         "breakeven": 735.0,
@@ -255,12 +248,12 @@
       "notes": "Sell $380 Put Aug 21 \u2014 breakeven ~$360.00; $380 support flagged in Growth Gazette",
       "current_price": 354.08,
       "option_data": {
-        "bid": 26.0,
-        "ask": 26.15,
-        "last": 26.1,
-        "iv": 71.4,
-        "volume": 5264,
-        "expiry_used": "2026-09-04"
+        "bid": 26.15,
+        "ask": 26.8,
+        "last": 26.35,
+        "iv": 53.1,
+        "volume": 864,
+        "expiry_used": "2026-09-09"
       },
       "status": {
         "breakeven": 360.0,
@@ -288,7 +281,7 @@
         "bid": 0.26,
         "ask": 0.32,
         "last": 0.29,
-        "iv": 47.8,
+        "iv": 49.5,
         "volume": 321,
         "expiry_used": "2026-10-16"
       },

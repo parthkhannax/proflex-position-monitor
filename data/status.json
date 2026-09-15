@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-15T20:24:29.849644Z",
+  "updated_at": "2026-09-15T23:03:21.264117Z",
   "positions": [
     {
       "id": "nvda-short-put-aug21",
@@ -19,7 +19,7 @@
         "ask": 0.03,
         "last": 0.03,
         "iv": 62.1,
-        "volume": 5708,
+        "volume": 5718,
         "expiry_used": "2026-09-16"
       },
       "status": {
@@ -135,7 +135,7 @@
       "notes": "Rolled from $320 Call Aug 21 -> $330 Call Sep 18 for $1.50 net debit",
       "current_price": 331.34,
       "option_data": {
-        "bid": 4.2,
+        "bid": 4.15,
         "ask": 4.3,
         "last": 4.2,
         "iv": 26.0,

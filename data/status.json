@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-16T20:23:02.247650Z",
+  "updated_at": "2026-09-16T23:09:33.711198Z",
   "positions": [
     {
       "id": "nvda-short-put-aug21",
@@ -139,7 +139,7 @@
         "ask": 4.55,
         "last": 4.41,
         "iv": 26.7,
-        "volume": 9368,
+        "volume": 9371,
         "expiry_used": "2026-09-18"
       },
       "status": {
@@ -255,10 +255,10 @@
       "notes": "Sell $380 Put Aug 21 \u2014 breakeven ~$360.00; $380 support flagged in Growth Gazette",
       "current_price": 358.08,
       "option_data": {
-        "bid": 22.15,
-        "ask": 22.35,
+        "bid": 21.65,
+        "ask": 23.4,
         "last": 21.9,
-        "iv": 71.5,
+        "iv": 82.1,
         "volume": 404,
         "expiry_used": "2026-09-16"
       },

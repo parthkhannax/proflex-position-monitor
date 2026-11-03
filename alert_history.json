@@ -6,14 +6,14 @@
   "nvda-short-put-jul17:CRITICAL": "2026-07-07T14:05:56.553878",
   "goog-short-put-aug21:WARNING": "2026-10-21T21:17:33.991499",
   "tlt-covered-call-aug21:WARNING": "2026-07-06T21:55:12.543432",
-  "aapl-covered-call-aug21:BREACHED": "2026-11-02T22:09:31.105183",
+  "aapl-covered-call-aug21:BREACHED": "2026-11-03T19:57:57.430785",
   "avgo-short-put-jul17:WARNING": "2026-07-03T21:05:52.053554",
   "aapl-covered-call-320-aug21:WARNING": "2026-07-15T13:42:42.877222",
   "aapl-covered-call-320-aug21:CRITICAL": "2026-07-15T14:03:17.313721",
   "asts-short-put-aug21:WARNING": "2026-08-21T20:29:38.038636",
   "asts-short-put-aug21:CRITICAL": "2026-09-08T22:23:16.024937",
-  "aapl-covered-call-330-sep18:WARNING": "2026-10-01T18:42:39.582127",
-  "asts-short-put-aug21:BREACHED": "2026-11-02T22:09:31.446182",
+  "aapl-covered-call-330-sep18:WARNING": "2026-11-03T19:57:57.457921",
+  "asts-short-put-aug21:BREACHED": "2026-11-03T19:57:57.675571",
   "aapl-covered-call-330-sep18:CRITICAL": "2026-11-02T22:09:31.193142",
   "gdx-short-put-aug21:WARNING": "2026-07-20T18:35:03.770745",
   "gdx-short-put-aug21:CRITICAL": "2026-07-20T21:34:12.473968",
@@ -22,5 +22,5 @@
   "tsla-short-put-aug21:WARNING": "2026-10-15T23:18:35.340809",
   "goog-short-put-aug21:CRITICAL": "2026-10-28T22:52:08.208302",
   "aapl-covered-call-330-sep18:BREACHED": "2026-10-29T23:06:19.118657",
-  "goog-short-put-aug21:BREACHED": "2026-11-02T22:09:30.489957"
+  "goog-short-put-aug21:BREACHED": "2026-11-03T19:57:56.792805"
 }

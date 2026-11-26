@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T22:08:57.128241Z",
+  "updated_at": "2026-11-26T22:07:56.450881Z",
   "positions": [
     {
       "id": "nvda-short-put-aug21",
@@ -15,12 +15,12 @@
       "notes": "Rolled from $200 Jul 17 to $190 Aug 21 for $0.50 debit \u2014 breakeven ~$184.20",
       "current_price": 149.3,
       "option_data": {
-        "bid": 38.1,
-        "ask": 44.1,
-        "last": 42.95,
-        "iv": 266.4,
-        "volume": 12,
-        "expiry_used": "2026-11-25"
+        "bid": 39.9,
+        "ask": 42.1,
+        "last": 41.13,
+        "iv": 178.7,
+        "volume": 41,
+        "expiry_used": "2026-11-27"
       },
       "status": {
         "breakeven": 184.2,
@@ -48,7 +48,7 @@
         "bid": 67.0,
         "ask": 70.9,
         "last": 69.35,
-        "iv": 180.7,
+        "iv": 221.3,
         "volume": 2,
         "expiry_used": "2026-11-27"
       },
@@ -76,11 +76,11 @@
       "current_price": 489.93,
       "option_data": {
         "bid": 0.0,
-        "ask": 0.01,
+        "ask": 0.15,
         "last": 0.01,
-        "iv": 93.8,
-        "volume": 302,
-        "expiry_used": "2026-11-25"
+        "iv": 141.4,
+        "volume": 5,
+        "expiry_used": "2026-11-27"
       },
       "status": {
         "breakeven": 364.4,
@@ -105,12 +105,12 @@
       "notes": "Sell $260 Call Aug 21 \u2014 avg price $6.90",
       "current_price": 355.58,
       "option_data": {
-        "bid": 84.75,
-        "ask": 87.15,
-        "last": 85.35,
-        "iv": 264.1,
-        "volume": 15,
-        "expiry_used": "2026-11-25"
+        "bid": 95.05,
+        "ask": 97.1,
+        "last": 87.3,
+        "iv": 218.6,
+        "volume": 1,
+        "expiry_used": "2026-11-27"
       },
       "status": {
         "breakeven": 260,
@@ -136,11 +136,11 @@
       "current_price": 355.58,
       "option_data": {
         "bid": 24.9,
-        "ask": 26.35,
-        "last": 25.0,
-        "iv": 62.9,
-        "volume": 141,
-        "expiry_used": "2026-11-25"
+        "ask": 27.25,
+        "last": 25.55,
+        "iv": 67.1,
+        "volume": 316,
+        "expiry_used": "2026-11-27"
       },
       "status": {
         "breakeven": 330,
@@ -168,7 +168,7 @@
         "bid": 52.85,
         "ask": 56.05,
         "last": 35.83,
-        "iv": 712.1,
+        "iv": 872.3,
         "volume": 2,
         "expiry_used": "2026-11-27"
       },
@@ -195,12 +195,12 @@
       "notes": "Sell $75 Put Aug 21 \u2014 breakeven ~$70.90; gold bottom entry",
       "current_price": 73.89,
       "option_data": {
-        "bid": 0.5,
-        "ask": 1.31,
-        "last": 0.94,
-        "iv": 38.5,
-        "volume": 65,
-        "expiry_used": "2026-11-25"
+        "bid": 1.41,
+        "ask": 2.12,
+        "last": 1.7,
+        "iv": 51.2,
+        "volume": 81,
+        "expiry_used": "2026-11-27"
       },
       "status": {
         "breakeven": 70.9,
@@ -225,12 +225,12 @@
       "notes": "Sell $800 Put Aug 21 \u2014 breakeven ~$735.00",
       "current_price": 601.25,
       "option_data": {
-        "bid": 191.3,
-        "ask": 202.9,
-        "last": 202.8,
-        "iv": 369.9,
-        "volume": 8,
-        "expiry_used": "2026-11-25"
+        "bid": 190.95,
+        "ask": 203.5,
+        "last": 226.03,
+        "iv": 270.0,
+        "volume": 9,
+        "expiry_used": "2026-11-27"
       },
       "status": {
         "breakeven": 735.0,
@@ -255,12 +255,12 @@
       "notes": "Sell $380 Put Aug 21 \u2014 breakeven ~$360.00; $380 support flagged in Growth Gazette",
       "current_price": 380.14,
       "option_data": {
-        "bid": 0.45,
-        "ask": 0.52,
-        "last": 0.49,
-        "iv": 7.4,
-        "volume": 41841,
-        "expiry_used": "2026-11-25"
+        "bid": 5.35,
+        "ask": 5.5,
+        "last": 5.45,
+        "iv": 49.6,
+        "volume": 8989,
+        "expiry_used": "2026-11-27"
       },
       "status": {
         "breakeven": 360.0,
@@ -288,7 +288,7 @@
         "bid": 0.0,
         "ask": 0.01,
         "last": 0.01,
-        "iv": 103.1,
+        "iv": 125.0,
         "volume": 1,
         "expiry_used": "2026-11-27"
       },
